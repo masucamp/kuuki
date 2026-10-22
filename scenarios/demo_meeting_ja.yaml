@@ -1,0 +1,33 @@
+# デモ台本: 取引先A社とのDB移行の定例
+# 期待する動き（expect）はリプレイの確認用。実際の判定は Decider と thresholds.yaml が決める。
+title: A社 基幹DB移行プロジェクト 定例
+title_en: "Company A core database migration: weekly meeting"
+agenda: 移行先DB（Aurora / DynamoDB）と移行スケジュールを決める。あわせて来月からの新保守プランを提案する
+agenda_en: "Decide the target database (Aurora or DynamoDB) and the migration schedule. Also propose a new maintenance plan from next month."
+duration_min: 60
+facts:
+  - 当社が昨年担当した同規模のDB移行案件は3件で、期間は平均5か月（最短4か月）
+  - 新保守プランの切り替えには、A社側での稟議が必要
+facts_en:
+  - "Our 3 comparable database migrations last year took 5 months on average (4 at the shortest)"
+  - "Switching to the new maintenance plan needs internal approval (ringi) at Company A"
+participants:
+  - {id: yamada, name: 山田部長, role: 当社の部長。この会議で最も上位, senior: true, voice: Takumi, name_en: Director Yamada, role_en: "Our director, the most senior person here"}
+  - {id: sato, name: 佐藤, role: 当社のPM, voice: Kazuha, name_en: Sato, role_en: Our project manager}
+  - {id: ito, name: 伊藤, role: 当社のDB担当。Aurora・DynamoDB両方の移行経験あり, voice: Mizuki, engine: standard, name_en: Ito, role_en: "Our database engineer, has migrated to both Aurora and DynamoDB"}
+  - {id: kimura, name: 木村課長, role: 取引先A社の課長, senior: true, voice: Tomoko, name_en: Manager Kimura, role_en: "Client, manager at Company A"}
+  - {id: john, name: John, role: 当社の海外拠点メンバー（オブザーバー）, overseas: true, name_en: John, role_en: "Our US office, observing"}
+utterances:
+  - {speaker: yamada, minute: 1, text: 本日はお時間をいただきありがとうございます。早速ですが移行計画の件から始めさせてください。, expect: {move: stay_silent}, en: "Thank you for your time today. Let's start with the migration plan."}
+  - {speaker: sato, minute: 5, text: 移行先はAuroraかDynamoDBで、正直まだ決めきれていません。, en: "Honestly, we still can't decide between Aurora and DynamoDB."}
+  - {speaker: kimura, minute: 7, text: 弊社としては運用コストが一番気になりますね。, en: "For us, running cost is the biggest concern."}
+  - {speaker: sato, minute: 9, text: どなたか、同じくらいの規模の移行を経験した方っていましたっけ…。, expect: {move: invite_quiet}, en: "Has anyone here done a migration of about this size before...?"}
+  - {speaker: ito, minute: 11, text: はい、どちらも経験があります。今回のアクセスパターンならAuroraのほうがコストも移行リスクも小さいと思います。, en: "Yes, I've done both. For this access pattern, Aurora has lower cost and lower migration risk."}
+  - {speaker: yamada, minute: 15, text: うちが去年やった移行案件は全部3か月で終わっているので、今回も3か月で行けるでしょう。, expect: {move: correct, delivery: [direct, private_dm_later]}, en: "All our migrations last year finished in 3 months, so this one will too."}
+  - {speaker: sato, minute: 40, text: そういえば木村さん、御社の近くに新しいラーメン屋ができましたよね。, expect: {move: stay_silent}, en: "By the way, Kimura-san, a new ramen place opened near your office, right?"}
+  - {speaker: kimura, minute: 42, text: ああ、行きました。味噌がおいしかったですよ。, expect: {move: refocus}, en: "Oh, I went there. The miso ramen was good."}
+  - {speaker: sato, minute: 50, text: 今度ご一緒しましょう。来週の金曜とかどうですか。, en: "Let's go together sometime. How about next Friday?"}
+  - {speaker: yamada, minute: 52, text: では佐藤くん、スケジュールの細かいところは例の件と同じ、例のやり方で詰めておいて。, expect: {move: clarify}, en: "Sato, work out the schedule details the same as that other thing, the usual way."}
+  - {speaker: sato, minute: 54, text: 木村さん、あわせて来月から新しい保守プランへの切り替えをご検討いただけないでしょうか。, en: "Kimura-san, would you also consider switching to the new maintenance plan from next month?"}
+  - {speaker: kimura, minute: 55, text: なるほど、前向きに検討させていただきます。ただ、社内の調整にかなりお時間をいただくかと…。, expect: {tatemae: true}, en: "I see. We will consider it positively. However, internal coordination may take quite a while..."}
+  - {speaker: kimura, minute: 58, text: 移行先はAuroraで進めてください。来週の水曜までに私のほうで稟議を上げます。, expect: {move: stay_silent}, en: "Please go ahead with Aurora. I'll submit the internal approval by next Wednesday."}

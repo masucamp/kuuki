@@ -1,0 +1,1000 @@
+# 評価用 50場面（日本語）
+# - 各場面は小さな会議。最後の発言の expect が正解ラベル
+#   move: stay_silent | correct | clarify | invite_quiet | refocus（省略時 stay_silent）
+#   delivery: direct | cushioned | private_dm_later、またはそのリスト（どれでも正解）。書いた場合のみ採点
+#   tatemae: true/false（省略時 false）
+# - split: tune = しきい値の調整に使う / test = 調整中は見ない（最後に1回だけ評価）
+# - 上位者（senior: true）の事実誤りも訂正する。その場か会議後のDMかは確信度で決まるので、どちらも正解とする
+# - 上位者のあいまいな指示の確認は、会議後のDMが正解とする
+# - refocus の場面は、議題外の発言がちょうど2つ続いたところで終わる（2つ目で戻すのが正解）
+
+scenes:
+# ---------------------------------------------------------------- stay_silent (14)
+- id: s01
+  split: tune
+  note: 通常の進捗報告。口を挟む理由がない
+  title: 週次定例
+  agenda: 各タスクの進捗確認
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: PM}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 高橋, role: テスト担当}
+  utterances:
+    - {speaker: a, minute: 3, text: では鈴木さんから進捗をお願いします。}
+    - {speaker: b, minute: 4, text: ログイン画面の改修は予定どおり水曜に完了しました。今は通知機能に着手しています。, expect: {move: stay_silent}}
+
+- id: s02
+  split: tune
+  note: 担当と期日つきの本心のYes
+  title: 社内ツール改善
+  agenda: 改善案の採否と担当決め
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 10, text: 検索結果をCSVで出せるようにする案、鈴木さんお願いできますか。}
+    - {speaker: b, minute: 11, text: はい、やります。来週の火曜までに出します。, expect: {move: stay_silent, tatemae: false}}
+
+- id: s03
+  split: tune
+  note: 取引先からの具体的な承諾（期日つき）。建前ではない
+  title: B社への見積もり説明
+  agenda: 見積もり内容の合意
+  duration_min: 45
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 小林部長, role: 取引先B社の部長, senior: true}
+  utterances:
+    - {speaker: a, minute: 30, text: こちらの金額で正式にご発注いただけますでしょうか。}
+    - {speaker: b, minute: 31, text: はい、この内容で問題ありません。今週金曜までに注文書をお送りします。, expect: {move: stay_silent, tatemae: false}}
+
+- id: s04
+  split: tune
+  note: 冒頭のあいさつ。誰も発言していないのは当然
+  title: 新規プロジェクト キックオフ
+  agenda: 体制とスケジュールの共有
+  duration_min: 60
+  participants:
+    - {id: a, name: 山本部長, role: 本部長, senior: true}
+    - {id: b, name: 佐藤, role: PM}
+    - {id: c, name: 伊藤, role: インフラ担当}
+    - {id: d, name: 中村, role: 新メンバー}
+  utterances:
+    - {speaker: a, minute: 1, text: 皆さんお集まりいただきありがとうございます。今日はキックオフなので、気楽にいきましょう。, expect: {move: stay_silent}}
+
+- id: s05
+  split: test
+  note: 場への質問に専門家がすでに答えた。もう話を振る必要はない
+  title: DB設計レビュー
+  agenda: インデックス設計の確認
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 伊藤, role: DBA}
+  utterances:
+    - {speaker: a, minute: 10, text: このテーブル、複合インデックスにすべきか誰か分かりますか。}
+    - {speaker: c, minute: 11, text: 検索条件の順序からすると、顧客IDと日付の複合インデックスがよいと思います。, expect: {move: stay_silent}}
+
+- id: s06
+  split: test
+  note: 冒頭の軽い雑談が1発言だけ。すぐ戻すほどではない
+  title: 月次の売上レビュー
+  agenda: 先月の売上と来月の施策
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: 課長}
+    - {id: b, name: 鈴木, role: 営業}
+    - {id: c, name: 高橋, role: 営業}
+  utterances:
+    - {speaker: a, minute: 1, text: 始めましょうか。}
+    - {speaker: b, minute: 2, text: 今日は暑いですね、外は35度らしいですよ。, expect: {move: stay_silent}}
+
+- id: s07
+  split: tune
+  note: 上位者の発言だが事実と合っている
+  title: 来期予算の検討
+  agenda: 来期のマーケティング予算
+  duration_min: 60
+  facts:
+    - 今期のマーケティング予算は2,000万円で、執行率は95%
+  participants:
+    - {id: a, name: 山田部長, role: 部長, senior: true}
+    - {id: b, name: 佐藤, role: 課長}
+  utterances:
+    - {speaker: b, minute: 5, text: 今期の実績から振り返ります。}
+    - {speaker: a, minute: 6, text: "今期は2,000万円をほぼ使い切ったんだよね。来期も同じ規模でいこう。", expect: {move: stay_silent}}
+
+- id: s08
+  split: tune
+  note: 具体的な指示（何を・どこに・いつまで）
+  title: リリース準備
+  agenda: リリース手順の確認
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 中村, role: 新メンバー}
+  utterances:
+    - {speaker: a, minute: 10, text: 中村さん、リリースノートの下書きを、共有フォルダの「release/v2.3」に明日の15時までに置いてください。}
+    - {speaker: b, minute: 11, text: 承知しました。, expect: {move: stay_silent}}
+
+- id: s09
+  split: tune
+  note: 「例の件」と言いつつ、すぐ中身を説明している
+  title: 経理との調整会議
+  agenda: 請求処理の不具合対応
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 中村, role: 新メンバー}
+  utterances:
+    - {speaker: a, minute: 5, text: 例の件、つまり先週あった請求書の二重発行の件ですが、中村さんは発行ログの調査をお願いします。, expect: {move: stay_silent}}
+
+- id: s10
+  split: test
+  note: 上位者からの本心の承諾（日付つき）。建前ではない
+  title: C社への提案
+  agenda: パイロット導入の合意
+  duration_min: 45
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 森本部長, role: 取引先C社の部長, senior: true}
+  utterances:
+    - {speaker: a, minute: 25, text: まずは1部署でパイロットを始めていただけないでしょうか。}
+    - {speaker: b, minute: 26, text: 承知しました。では来週月曜から経理部で始めましょう。担当は私から指名します。, expect: {move: stay_silent, tatemae: false}}
+
+- id: s11
+  split: tune
+  note: 議題に沿った意見の対立。健全な議論なので口を挟まない
+  title: アーキテクチャ検討
+  agenda: 認証基盤をCognitoにするか自前にするか
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 高橋, role: 開発}
+  utterances:
+    - {speaker: b, minute: 15, text: 運用負荷を考えるとCognitoがいいと思います。}
+    - {speaker: c, minute: 16, text: でも画面のカスタマイズ要件が多いので、自前のほうが結局早いかもしれません。, expect: {move: stay_silent}}
+
+- id: s12
+  split: test
+  note: PMが自分でまとめている
+  title: 要件定義 第3回
+  agenda: 帳票要件の確定
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: PM}
+    - {id: b, name: 木村, role: 業務担当}
+  utterances:
+    - {speaker: b, minute: 50, text: 帳票はPDFだけでなくExcelも必要です。}
+    - {speaker: a, minute: 55, text: では今日の決定事項です。帳票はPDFとExcelの両方、締めは月末、担当は木村さんで確定します。, expect: {move: stay_silent}}
+
+- id: s13
+  split: tune
+  note: 名指しの質問に本人が答えた
+  title: 障害振り返り
+  agenda: 原因と再発防止策
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 伊藤, role: インフラ担当}
+    - {id: c, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 10, text: 伊藤さん、当日のアラートはどう出ていましたか。}
+    - {speaker: b, minute: 11, text: ディスク使用率のアラートが深夜2時に出ていましたが、通知先が古いチャンネルのままでした。, expect: {move: stay_silent}}
+
+- id: s14
+  split: test
+  note: 場への質問だが、全員すでに発言しており黙っている適任者はいない
+  title: 採用方針の検討
+  agenda: 来期の採用人数
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 課長}
+    - {id: b, name: 鈴木, role: リーダー}
+    - {id: c, name: 高橋, role: リーダー}
+  utterances:
+    - {speaker: b, minute: 5, text: うちのチームは2名ほしいです。}
+    - {speaker: c, minute: 6, text: こちらは1名で足ります。}
+    - {speaker: a, minute: 8, text: 合計3名か。ほかに意見ある人いますか。, expect: {move: stay_silent}}
+
+# ---------------------------------------------------------------- correct (8)
+- id: s15
+  split: tune
+  note: 同僚が締切を誤認。その場で指摘してよい
+  title: リリース計画
+  agenda: 次回リリースの日程
+  duration_min: 30
+  facts:
+    - 顧客と合意した次回リリース日は11月10日
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 5, text: スケジュールを確認しましょう。}
+    - {speaker: b, minute: 6, text: リリースは11月20日なので、まだ3週間は余裕がありますね。, expect: {move: correct, delivery: direct}}
+
+- id: s16
+  split: tune
+  note: 同僚が単価を誤認
+  title: 見積もり作成
+  agenda: D社向け見積もりの確認
+  duration_min: 30
+  facts:
+    - 当社の標準単価は1人月120万円（今年4月に改定）
+  participants:
+    - {id: a, name: 田中, role: 営業}
+    - {id: b, name: 高橋, role: 営業}
+  utterances:
+    - {speaker: a, minute: 8, text: 工数は5人月で見ています。}
+    - {speaker: b, minute: 9, text: 単価100万円なので、合計500万円で出しましょう。, expect: {move: correct, delivery: direct}}
+
+- id: s17
+  split: tune
+  note: 同僚がサポート終了済みのバージョンを使おうとしている
+  title: 技術選定
+  agenda: ランタイムのバージョン決め
+  duration_min: 30
+  facts:
+    - Python 3.8 は2024年10月にサポートが終了している
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 5, text: Lambdaのランタイムはどうしますか。}
+    - {speaker: b, minute: 6, text: 既存コードとの互換性を考えて、Python 3.8でいきましょう。まだサポート期間内ですし。, expect: {move: correct, delivery: direct}}
+
+- id: s18
+  split: test
+  note: 同僚がユーザー数を誤認
+  title: 負荷試験の計画
+  agenda: 想定負荷の決定
+  duration_min: 45
+  facts:
+    - 現在の月間アクティブユーザーは約12万人
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 高橋, role: テスト担当}
+  utterances:
+    - {speaker: a, minute: 10, text: 想定ユーザー数の前提はどうしましょう。}
+    - {speaker: b, minute: 11, text: 今のユーザーが3万人くらいなので、その2倍の6万人で試験すれば十分だと思います。, expect: {move: correct, delivery: direct}}
+
+- id: s19
+  split: tune
+  note: 部長が予算額を誤認。上位者でも訂正する
+  title: 来期予算の検討
+  agenda: 来期のシステム投資
+  duration_min: 60
+  facts:
+    - 今期のシステム投資予算は8,000万円
+  participants:
+    - {id: a, name: 山田部長, role: 部長, senior: true}
+    - {id: b, name: 佐藤, role: 課長}
+    - {id: c, name: 鈴木, role: 担当}
+  utterances:
+    - {speaker: b, minute: 10, text: 来期の投資額を決めたいと思います。}
+    - {speaker: a, minute: 11, text: "今期は5,000万円だったから、来期は1億まで増やすのは無理があるな。", expect: {move: correct, delivery: [direct, private_dm_later]}}
+
+- id: s20
+  split: tune
+  note: 取引先の課長が契約期間を誤認。上位者でも訂正する
+  title: 契約更新の打ち合わせ
+  agenda: 保守契約の更新
+  duration_min: 45
+  facts:
+    - 本日は2026年10月20日
+    - 現行の保守契約は2025年4月開始の3年契約で、満了は2028年3月
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 西村課長, role: 取引先E社の課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 5, text: 本日は保守契約の今後についてご相談させてください。}
+    - {speaker: b, minute: 6, text: 今の契約は来年3月で満了ですよね。そこで見直しを考えています。, expect: {move: correct, delivery: [direct, private_dm_later]}}
+
+- id: s21
+  split: test
+  note: 役員が市場シェアを誤認
+  title: 経営会議
+  agenda: 来期の事業計画
+  duration_min: 90
+  facts:
+    - 最新の調査では当社の国内シェアは18%で、業界3位
+  participants:
+    - {id: a, name: 松本常務, role: 常務, senior: true}
+    - {id: b, name: 佐藤, role: 経営企画}
+  utterances:
+    - {speaker: b, minute: 20, text: 市場の状況からご説明します。}
+    - {speaker: a, minute: 21, text: うちはシェア30%で業界トップなんだから、守りより攻めでいくべきだ。, expect: {move: correct, delivery: [direct, private_dm_later]}}
+
+- id: s22
+  split: test
+  note: 部長がサービス開始日を誤認
+  title: 新サービス準備会議
+  agenda: ローンチ準備の確認
+  duration_min: 45
+  facts:
+    - 新サービスの開始日は12月1日（先月の役員会で決定）
+  participants:
+    - {id: a, name: 山田部長, role: 部長, senior: true}
+    - {id: b, name: 佐藤, role: 課長}
+  utterances:
+    - {speaker: b, minute: 5, text: 広告の出稿時期を決めたいです。}
+    - {speaker: a, minute: 6, text: 開始は来年の1月だから、広告は12月中旬からで十分だろう。, expect: {move: correct, delivery: [direct, private_dm_later]}}
+
+# ---------------------------------------------------------------- clarify (6)
+- id: s23
+  split: tune
+  note: 同僚が新人に「いつものやつ」とだけ指示
+  title: 運用チーム定例
+  agenda: 今週の作業分担
+  duration_min: 30
+  participants:
+    - {id: a, name: 鈴木, role: 運用リーダー}
+    - {id: b, name: 中村, role: 今週から参加した新メンバー}
+  utterances:
+    - {speaker: a, minute: 10, text: 中村さんは、金曜にいつものやつをお願いします。}
+    - {speaker: b, minute: 11, text: あ、はい…。, expect: {move: clarify, delivery: direct}}
+
+- id: s24
+  split: tune
+  note: 置き場所も資料も指示語だけ
+  title: 提案書レビュー
+  agenda: F社向け提案書の仕上げ
+  duration_min: 30
+  participants:
+    - {id: a, name: 高橋, role: 営業}
+    - {id: b, name: 中村, role: 新メンバー}
+  utterances:
+    - {speaker: a, minute: 20, text: じゃあ例の資料、いつものフォルダに置いといてもらえる？}
+    - {speaker: b, minute: 21, text: えっと…はい。, expect: {move: clarify, delivery: direct}}
+
+- id: s25
+  split: test
+  note: 「いい感じに」で中身が決まっていない
+  title: デザインレビュー
+  agenda: トップページの改修方針
+  duration_min: 30
+  participants:
+    - {id: a, name: 鈴木, role: ディレクター}
+    - {id: b, name: 岡田, role: デザイナー（外部パートナー）}
+  utterances:
+    - {speaker: a, minute: 15, text: ヘッダーまわりは、あれと同じ感じで、いい感じにしておいてください。}
+    - {speaker: b, minute: 16, text: 承知しました…。, expect: {move: clarify, delivery: direct}}
+
+- id: s26
+  split: tune
+  note: 部長の指示が指示語だけ。会議後に確認
+  title: 部内会議
+  agenda: 下期の重点施策
+  duration_min: 60
+  participants:
+    - {id: a, name: 山田部長, role: 部長, senior: true}
+    - {id: b, name: 佐藤, role: 課長}
+    - {id: c, name: 中村, role: 担当}
+  utterances:
+    - {speaker: a, minute: 30, text: 例の件は、例の方向で進めておいてくれ。中村くんも手伝うように。}
+    - {speaker: c, minute: 31, text: は、はい。, expect: {move: clarify, delivery: private_dm_later}}
+
+- id: s27
+  split: test
+  note: 本部長が「前と同じ感じ」とだけ指示
+  title: 展示会の準備会議
+  agenda: ブースの出展内容
+  duration_min: 45
+  participants:
+    - {id: a, name: 山本本部長, role: 本部長, senior: true}
+    - {id: b, name: 高橋, role: マーケティング担当}
+  utterances:
+    - {speaker: a, minute: 10, text: ブースの展示は、前回のあれと同じ感じで頼むよ。}
+    - {speaker: b, minute: 11, text: 承知しました。, expect: {move: clarify, delivery: private_dm_later}}
+
+- id: s28
+  split: tune
+  note: 取引先の部長が「例の条件」とだけ言う。会議後に確認
+  title: G社との打ち合わせ
+  agenda: 追加開発の見積もり依頼
+  duration_min: 45
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 石川部長, role: 取引先G社の部長, senior: true}
+  utterances:
+    - {speaker: b, minute: 20, text: 見積もりは例の条件で出してもらえますか。}
+    - {speaker: a, minute: 21, text: 承知いたしました。, expect: {move: clarify, delivery: private_dm_later}}
+
+# ---------------------------------------------------------------- invite_quiet (7)
+- id: s29
+  split: tune
+  note: セキュリティの質問で止まっている。黙っているセキュリティ担当がいる
+  title: 新機能の設計レビュー
+  agenda: ファイル共有機能の設計
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 吉田, role: セキュリティ担当。脆弱性診断の経験が長い}
+  utterances:
+    - {speaker: a, minute: 10, text: 共有リンクの有効期限は設定画面で選べるようにします。}
+    - {speaker: b, minute: 15, text: 外部共有のときの認可、署名付きURLだけで大丈夫なんでしたっけ…誰か分かりますか。, expect: {move: invite_quiet}}
+
+- id: s30
+  split: tune
+  note: 契約上の質問。黙っている法務担当がいる
+  title: 新サービスの利用規約検討
+  agenda: 規約のドラフト確認
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 事業責任者}
+    - {id: b, name: 高橋, role: 企画}
+    - {id: c, name: 斎藤, role: 法務担当}
+  utterances:
+    - {speaker: a, minute: 10, text: 返金ポリシーは30日以内なら全額返金にしたいです。}
+    - {speaker: b, minute: 12, text: そういう規約って消費者契約法的に問題ないんでしょうか…どなたか詳しい方いますか。, expect: {move: invite_quiet}}
+
+- id: s31
+  split: tune
+  note: 会計処理の質問。黙っている経理担当がいる
+  title: SaaS導入の検討
+  agenda: 導入可否と費用
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 情シス課長}
+    - {id: b, name: 鈴木, role: 情シス}
+    - {id: c, name: 加藤, role: 経理担当}
+  utterances:
+    - {speaker: a, minute: 8, text: 年額で300万円のプランが候補です。}
+    - {speaker: b, minute: 10, text: これって資産計上になるのか費用で落とせるのか、誰か分かります？, expect: {move: invite_quiet}}
+
+- id: s32
+  split: tune
+  note: 使い勝手の議論で止まっている。黙っているUXデザイナーがいる
+  title: アプリ改善会議
+  agenda: 離脱率の改善
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: プロダクトマネージャー}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 岡田, role: UXデザイナー。ユーザーテストを担当}
+  utterances:
+    - {speaker: a, minute: 10, text: 会員登録の途中で3割が離脱しています。}
+    - {speaker: b, minute: 12, text: 入力項目を減らすべきなのか、画面を分けるべきなのか…どっちが効くんですかね。, expect: {move: invite_quiet}}
+
+- id: s33
+  split: test
+  note: ネットワーク遅延の原因で止まっている。黙っているネットワーク担当がいる
+  title: 性能問題の対策会議
+  agenda: 大阪拠点からの遅延対応
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: アプリ開発}
+    - {id: c, name: 伊藤, role: ネットワーク担当。拠点間VPNを構築した}
+  utterances:
+    - {speaker: a, minute: 5, text: 大阪からだけ画面表示に5秒以上かかっています。}
+    - {speaker: b, minute: 8, text: アプリ側のログでは処理は速いんですよね…経路の問題なんでしょうか、誰か分かる人います？, expect: {move: invite_quiet}}
+
+- id: s34
+  split: test
+  note: 海外市場の質問。黙っている海外拠点メンバーがいる
+  title: 海外展開の検討
+  agenda: 米国向け料金プラン
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: 事業責任者}
+    - {id: b, name: 高橋, role: 企画}
+    - {id: c, name: John, role: 米国拠点の営業。現地の商習慣に詳しい, overseas: true}
+  utterances:
+    - {speaker: a, minute: 10, text: 国内と同じ月額課金でいいと思っています。}
+    - {speaker: b, minute: 12, text: アメリカの企業って、年額一括のほうが好まれたりするんでしょうか…。どなたか知ってます？, expect: {move: invite_quiet}}
+
+- id: s35
+  split: test
+  note: ライブラリの経験者を探している。経験のある人が黙っている
+  title: フロントエンド技術選定
+  agenda: 状態管理ライブラリの選定
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 松田, role: 開発。前の案件でZustandを本番運用していた}
+  utterances:
+    - {speaker: a, minute: 5, text: ReduxかZustandで迷っています。}
+    - {speaker: b, minute: 7, text: Zustandを本番で使ったことある人っていましたっけ。, expect: {move: invite_quiet}}
+
+# ---------------------------------------------------------------- refocus (7)
+- id: s36
+  split: tune
+  note: 予算会議で野球の話が続いている
+  title: 下期予算会議
+  agenda: 下期の部門予算の配分
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: 課長}
+    - {id: b, name: 鈴木, role: 担当}
+    - {id: c, name: 高橋, role: 担当}
+  utterances:
+    - {speaker: a, minute: 30, text: 配分案はこの3パターンです。}
+    - {speaker: b, minute: 35, text: そういえば昨日の日本シリーズ見ました？}
+    - {speaker: c, minute: 36, text: 見ました！9回の逆転はすごかったですね。あのホームランは鳥肌でしたよ。, expect: {move: refocus}}
+
+- id: s37
+  split: tune
+  note: 旅行の話が続いている
+  title: 品質改善会議
+  agenda: 不具合件数の削減策
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 品質リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 高橋, role: テスト}
+  utterances:
+    - {speaker: a, minute: 10, text: 先月の不具合は42件でした。}
+    - {speaker: b, minute: 15, text: そういえば高橋さん、北海道旅行どうでした？}
+    - {speaker: c, minute: 16, text: 最高でした。海鮮丼がとにかくおいしくて、また冬にも行きたいです。, expect: {move: refocus}}
+
+- id: s38
+  split: tune
+  note: 仕事の話だが別プロジェクトの話題に流れている
+  title: H社案件の定例
+  agenda: H社案件の課題管理
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: PM}
+    - {id: b, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 10, text: H社の課題は残り5件です。}
+    - {speaker: b, minute: 15, text: そういえば別件のI社の案件、来月からメンバー増えるらしいですね。}
+    - {speaker: a, minute: 16, text: そうそう、I社は体制がまだ決まってなくて大変みたいだよ。, expect: {move: refocus}}
+
+- id: s39
+  split: tune
+  note: オフィスのコーヒーマシンの話が続いている
+  title: 採用面接の振り返り
+  agenda: 候補者3名の合否判断
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: 課長}
+    - {id: b, name: 鈴木, role: 面接官}
+  utterances:
+    - {speaker: a, minute: 5, text: 1人目の候補者はどうでしたか。}
+    - {speaker: b, minute: 8, text: ところで、休憩室のコーヒーマシン、また壊れてましたよ。}
+    - {speaker: a, minute: 9, text: え、先月直したばかりなのに。総務に言っておかないとね。, expect: {move: refocus}}
+
+- id: s40
+  split: test
+  note: 忘年会の話が続いている
+  title: 年度計画レビュー
+  agenda: 来年度の目標設定
+  duration_min: 60
+  participants:
+    - {id: a, name: 佐藤, role: 課長}
+    - {id: b, name: 鈴木, role: リーダー}
+    - {id: c, name: 高橋, role: 担当}
+  utterances:
+    - {speaker: a, minute: 20, text: 売上目標は前年比110%でどうでしょう。}
+    - {speaker: c, minute: 25, text: そういえば今年の忘年会の幹事って誰でしたっけ。}
+    - {speaker: b, minute: 26, text: 僕です。去年の焼肉屋がよかったので、またあそこにしようかと。, expect: {move: refocus}}
+
+- id: s41
+  split: test
+  note: 採用計画の会議でキーボードの話が続いている
+  title: 採用計画会議
+  agenda: エンジニア採用の要件定義
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 開発部長, senior: true}
+    - {id: b, name: 鈴木, role: リーダー}
+  utterances:
+    - {speaker: a, minute: 10, text: 求めるスキルを整理しよう。}
+    - {speaker: b, minute: 15, text: 最近、分割キーボードに変えたんですよ。肩こりがだいぶ楽になって。}
+    - {speaker: a, minute: 16, text: へえ、どこのメーカーの？俺も気になってたんだよ。, expect: {move: refocus}}
+
+- id: s42
+  split: test
+  note: 残り5分で私的な話が続いている
+  title: 移行作業の判定会議
+  agenda: 本番移行の実施可否の判断
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: PM}
+    - {id: b, name: 伊藤, role: インフラ}
+    - {id: c, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 20, text: リハーサルの結果を共有します。}
+    - {speaker: c, minute: 24, text: 伊藤さん、引っ越しは終わりました？}
+    - {speaker: b, minute: 25, text: まだ段ボールだらけです。ネット回線の工事が来週で。, expect: {move: refocus}}
+
+# ---------------------------------------------------------------- tatemae (8)
+- id: s43
+  split: tune
+  note: 予算を理由にした遠回しの断り
+  title: J社への新製品提案
+  agenda: 新製品の導入提案
+  duration_min: 45
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 林課長, role: 取引先J社の課長, senior: true}
+    - {id: c, name: Emily, role: 当社の海外拠点メンバー, overseas: true}
+  utterances:
+    - {speaker: a, minute: 30, text: ぜひ今期中にご導入いただけないでしょうか。}
+    - {speaker: b, minute: 31, text: 検討させていただきます。ただ、今期は予算がかなり厳しい状況でして…。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s44
+  split: tune
+  note: 「なかなか難しいかも」は実質No
+  title: K社との価格交渉
+  agenda: 値上げのお願い
+  duration_min: 45
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 岡本部長, role: 取引先K社の部長, senior: true}
+  utterances:
+    - {speaker: a, minute: 20, text: 来年度から単価を5%上げさせていただけないでしょうか。}
+    - {speaker: b, minute: 21, text: うーん、それはなかなか難しいかもしれませんね…。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s45
+  split: tune
+  note: 「あまり期待しないで」は実質No
+  title: 社内の増員依頼
+  agenda: 下期の体制
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: 課長}
+    - {id: b, name: 山田部長, role: 部長, senior: true}
+  utterances:
+    - {speaker: a, minute: 10, text: 下期から1名増員をお願いできないでしょうか。}
+    - {speaker: b, minute: 11, text: 気持ちは分かる。上とも相談してみるけど、あまり期待はしないでほしいな。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s46
+  split: tune
+  note: 「持ち帰って前向きに」＋時期未定は実質No
+  title: L社への共同プロモーション提案
+  agenda: 共同キャンペーンの提案
+  duration_min: 45
+  participants:
+    - {id: a, name: 高橋, role: 当社 マーケティング}
+    - {id: b, name: 村上課長, role: 取引先L社の課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 25, text: 年末に共同キャンペーンを実施できないでしょうか。}
+    - {speaker: b, minute: 26, text: 貴重なご提案ありがとうございます。持ち帰って前向きに検討します。ただ、時期についてはまだ何とも言えない状況でして。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s47
+  split: tune
+  note: 現場の負担を理由に「様子を見たい」は実質No
+  title: 業務改善の提案
+  agenda: 新しい勤怠システムへの移行
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 情シス}
+    - {id: b, name: 西田課長, role: 製造現場の課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 15, text: 来月から製造部でも新しい勤怠システムを使っていただけませんか。}
+    - {speaker: b, minute: 16, text: おっしゃることはよく分かります。ただ、現場の負担もありますので、少し様子を見させてください。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s48
+  split: test
+  note: 「善処します」は実質No
+  title: 納期前倒しの相談
+  agenda: M社案件の納期
+  duration_min: 30
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 吉村課長, role: 協力会社の課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 10, text: 納期を2週間前倒ししていただくことは可能でしょうか。}
+    - {speaker: b, minute: 11, text: 善処します。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s49
+  split: test
+  note: 「できなくはないですが…」＋他案件の事情は実質No
+  title: チーム内の作業依頼
+  agenda: 追加機能の担当決め
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: リーダー}
+    - {id: b, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 10, text: 鈴木さん、この追加機能を今週中にお願いできますか。}
+    - {speaker: b, minute: 11, text: できなくはないですが…ほかの案件のリリースも今週でして…。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s50
+  split: test
+  note: 「機会があればぜひ」は実質No
+  title: N社へのパイロット提案
+  agenda: 無償パイロットの提案
+  duration_min: 30
+  participants:
+    - {id: a, name: 高橋, role: 当社 営業}
+    - {id: b, name: 小川部長, role: 取引先N社の部長, senior: true}
+    - {id: c, name: John, role: 当社の海外拠点メンバー, overseas: true}
+  utterances:
+    - {speaker: a, minute: 20, text: 来月から1か月、無償でパイロットをお試しいただけませんか。}
+    - {speaker: b, minute: 21, text: ありがとうございます。また機会があればぜひ。, expect: {move: stay_silent, tatemae: true}}
+
+# ================================================================ test2 (20)
+# 2026-10-19 追加。しきい値と迷う範囲を決めた後に書いた、独立した検証用の場面。
+# これらの結果を見てしきい値・迷う範囲・問いを変えてはいけない。
+
+# ---------------------------------------------------------------- stay_silent (6)
+- id: s51
+  split: test2
+  note: 数字を含む報告だが前提と一致
+  title: 月次の運用報告
+  agenda: 先月の稼働状況
+  duration_min: 30
+  facts:
+    - 先月のシステム稼働率は99.95%、障害は1件
+  participants:
+    - {id: a, name: 佐藤, role: 運用リーダー}
+    - {id: b, name: 鈴木, role: 運用担当}
+  utterances:
+    - {speaker: a, minute: 3, text: 先月の数字をお願いします。}
+    - {speaker: b, minute: 4, text: 稼働率は99.95%で、障害は月初の1件だけでした。, expect: {move: stay_silent}}
+
+- id: s52
+  split: test2
+  note: 上位者の具体的な指示（誰が・何を・いつまで）
+  title: 監査対応の打ち合わせ
+  agenda: 監査資料の準備分担
+  duration_min: 30
+  participants:
+    - {id: a, name: 山口部長, role: 部長, senior: true}
+    - {id: b, name: 中村, role: 担当}
+  utterances:
+    - {speaker: a, minute: 5, text: 中村くんは、アクセス権限の一覧を今週木曜までにExcelでまとめて、私に送ってください。}
+    - {speaker: b, minute: 6, text: 承知しました。, expect: {move: stay_silent}}
+
+- id: s53
+  split: test2
+  note: 取引先の条件つきだが具体的な承諾（期日・担当つき）
+  title: P社との打ち合わせ
+  agenda: 追加開発の発注
+  duration_min: 45
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 藤井課長, role: 取引先P社の課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 30, text: 追加開発、この見積もりで進めさせていただけますか。}
+    - {speaker: b, minute: 31, text: 金額は問題ありません。納期を2週間延ばしていただければ、来週月曜に発注書を出します。, expect: {move: stay_silent, tatemae: false}}
+
+- id: s54
+  split: test2
+  note: 議題に関する雑談まじりの意見。脱線ではない
+  title: 新オフィスのレイアウト検討
+  agenda: 会議室の数と配置
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 総務}
+    - {id: b, name: 高橋, role: 営業}
+  utterances:
+    - {speaker: a, minute: 10, text: 会議室は今の4室から6室に増やす案です。}
+    - {speaker: b, minute: 11, text: 前のオフィスは会議室の取り合いで毎朝けんかでしたからね。6室あれば助かります。, expect: {move: stay_silent}}
+
+- id: s55
+  split: test2
+  note: 場への質問に、まだ黙っている人がいるが専門外
+  title: 社内勉強会の企画
+  agenda: 次回のテーマ決め
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: 企画担当}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 加藤, role: 経理担当}
+  utterances:
+    - {speaker: a, minute: 5, text: 次回のテーマ、何がいいですかね。}
+    - {speaker: b, minute: 6, text: 生成AIの社内活用はどうでしょう。}
+    - {speaker: a, minute: 7, text: いいですね。ほかに案がある人いますか。, expect: {move: stay_silent}}
+
+- id: s56
+  split: test2
+  note: 指示語を使っているが、直前に中身が明示されている
+  title: 障害対応の朝会
+  agenda: 昨夜のバッチ遅延の対応
+  duration_min: 15
+  participants:
+    - {id: a, name: 伊藤, role: インフラリーダー}
+    - {id: b, name: 松田, role: インフラ担当}
+  utterances:
+    - {speaker: a, minute: 2, text: 昨夜の遅延はDBのロック待ちが原因でした。対策はバッチの開始を30分ずらすことです。}
+    - {speaker: a, minute: 3, text: 松田さん、今夜からそれでお願いします。, expect: {move: stay_silent}}
+
+# ---------------------------------------------------------------- correct (3)
+- id: s57
+  split: test2
+  note: 同僚が人数を誤認
+  title: 研修の準備
+  agenda: 新人研修の会場手配
+  duration_min: 30
+  facts:
+    - 今年の新入社員は24名
+  participants:
+    - {id: a, name: 佐藤, role: 人事}
+    - {id: b, name: 鈴木, role: 人事}
+  utterances:
+    - {speaker: a, minute: 5, text: 会場の広さを決めましょう。}
+    - {speaker: b, minute: 6, text: 新人は15名なので、20人部屋で十分ですね。, expect: {move: correct, delivery: direct}}
+
+- id: s58
+  split: test2
+  note: 同僚が締め日を誤認
+  title: 経費精算の運用変更
+  agenda: 新しい締め日の周知
+  duration_min: 30
+  facts:
+    - 来月から経費精算の締め日は毎月20日に変わる
+  participants:
+    - {id: a, name: 加藤, role: 経理}
+    - {id: b, name: 高橋, role: 経理}
+  utterances:
+    - {speaker: a, minute: 5, text: 周知文の内容を確認しましょう。}
+    - {speaker: b, minute: 6, text: 締め日は来月から25日になります、と書いておきますね。, expect: {move: correct, delivery: direct}}
+
+- id: s59
+  split: test2
+  note: 取締役が導入実績の数字を誤認
+  title: 投資判断会議
+  agenda: 新システムへの追加投資
+  duration_min: 60
+  facts:
+    - 新システムの導入拠点は現在12拠点中4拠点
+  participants:
+    - {id: a, name: 森田取締役, role: 取締役, senior: true}
+    - {id: b, name: 佐藤, role: 情シス課長}
+  utterances:
+    - {speaker: b, minute: 10, text: 追加投資のご判断をお願いします。}
+    - {speaker: a, minute: 11, text: もう半分以上の拠点に入っているんだから、残りも一気に入れてしまおう。, expect: {move: correct, delivery: [direct, private_dm_later]}}
+
+# ---------------------------------------------------------------- clarify (3)
+- id: s60
+  split: test2
+  note: 同僚が「あの件」「いつもの感じ」だけで依頼
+  title: 広報チームの定例
+  agenda: 来週のプレスリリース
+  duration_min: 30
+  participants:
+    - {id: a, name: 高橋, role: 広報リーダー}
+    - {id: b, name: 岡田, role: 先月異動してきた広報担当}
+  utterances:
+    - {speaker: a, minute: 10, text: 岡田さん、あの件のリリース、いつもの感じでまとめておいて。}
+    - {speaker: b, minute: 11, text: えっと、はい…。, expect: {move: clarify, delivery: direct}}
+
+- id: s61
+  split: test2
+  note: 同僚が「例のツール」「例の手順」だけで依頼
+  title: 開発チームの定例
+  agenda: リリース前チェック
+  duration_min: 30
+  participants:
+    - {id: a, name: 鈴木, role: 開発リーダー}
+    - {id: b, name: 松本, role: 業務委託で今週から参加}
+  utterances:
+    - {speaker: a, minute: 15, text: 松本さん、リリース前に例のツールで、例の手順どおりチェックしておいてください。}
+    - {speaker: b, minute: 16, text: あ、承知しました…。, expect: {move: clarify, delivery: direct}}
+
+- id: s62
+  split: test2
+  note: 常務が「あの線で」とだけ指示
+  title: 価格改定の検討会
+  agenda: 来期の価格方針
+  duration_min: 60
+  participants:
+    - {id: a, name: 松本常務, role: 常務, senior: true}
+    - {id: b, name: 高橋, role: 営業企画}
+  utterances:
+    - {speaker: a, minute: 40, text: 価格はこの前話したあの線で、資料を作っておいてくれ。}
+    - {speaker: b, minute: 41, text: はい…承知しました。, expect: {move: clarify, delivery: private_dm_later}}
+
+# ---------------------------------------------------------------- invite_quiet (3)
+- id: s63
+  split: test2
+  note: 労務の質問で止まっている。黙っている社労士資格者がいる
+  title: 働き方改革の検討
+  agenda: フレックス制度の導入
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: 人事課長}
+    - {id: b, name: 鈴木, role: 人事}
+    - {id: c, name: 吉村, role: 人事。社会保険労務士の資格を持つ}
+  utterances:
+    - {speaker: a, minute: 10, text: コアタイムなしのフレックスにしたいと考えています。}
+    - {speaker: b, minute: 12, text: それって労使協定で何を決めておけばいいんでしたっけ…どなたか分かりますか。, expect: {move: invite_quiet}}
+
+- id: s64
+  split: test2
+  note: 物流の質問。黙っている倉庫の現場リーダーがいる
+  title: EC事業の改善会議
+  agenda: 当日出荷の実現
+  duration_min: 45
+  participants:
+    - {id: a, name: 高橋, role: EC事業責任者}
+    - {id: b, name: 岡田, role: マーケティング}
+    - {id: c, name: 石井, role: 物流倉庫の現場リーダー}
+  utterances:
+    - {speaker: a, minute: 8, text: 15時までの注文を当日出荷にしたいんです。}
+    - {speaker: b, minute: 10, text: 倉庫のピッキングって、今は1時間に何件くらいさばけるんでしょう。誰か分かります？, expect: {move: invite_quiet}}
+
+- id: s65
+  split: test2
+  note: 機械学習の質問。黙っているデータサイエンティストがいる
+  title: 需要予測プロジェクト
+  agenda: 予測モデルの方針
+  duration_min: 45
+  participants:
+    - {id: a, name: 佐藤, role: PM}
+    - {id: b, name: 鈴木, role: 開発}
+    - {id: c, name: 林, role: データサイエンティスト。時系列予測の経験が長い}
+  utterances:
+    - {speaker: a, minute: 10, text: まずは過去3年の販売データで予測してみます。}
+    - {speaker: b, minute: 12, text: 季節性って、モデル側でどう扱うのがいいんですかね。誰か詳しい人います？, expect: {move: invite_quiet}}
+
+# ---------------------------------------------------------------- refocus (2)
+- id: s66
+  split: test2
+  note: セキュリティ会議でサッカーの話が続いている
+  title: セキュリティ委員会
+  agenda: パスワードポリシーの見直し
+  duration_min: 45
+  participants:
+    - {id: a, name: 吉田, role: セキュリティ担当}
+    - {id: b, name: 佐藤, role: 情シス}
+    - {id: c, name: 鈴木, role: 開発}
+  utterances:
+    - {speaker: a, minute: 10, text: パスワードの定期変更を廃止する案です。}
+    - {speaker: b, minute: 15, text: そういえば昨日の代表戦、見ました？}
+    - {speaker: c, minute: 16, text: 見ました！最後のPK、しびれましたね。, expect: {move: refocus}}
+
+- id: s67
+  split: test2
+  note: 残り時間わずかで、ペットの話が続いている
+  title: 契約更新の判断会議
+  agenda: クラウド契約を更新するかどうか
+  duration_min: 30
+  participants:
+    - {id: a, name: 佐藤, role: 情シス課長}
+    - {id: b, name: 高橋, role: 情シス}
+  utterances:
+    - {speaker: a, minute: 20, text: 更新するなら今週中に返事が必要です。}
+    - {speaker: b, minute: 24, text: そういえば、うちの猫が最近キーボードの上で寝るんですよ。}
+    - {speaker: a, minute: 25, text: うちの犬もです。リモート会議に毎回乱入してきて。, expect: {move: refocus}}
+
+# ---------------------------------------------------------------- tatemae (3)
+- id: s68
+  split: test2
+  note: 「前例がないので」は実質No
+  title: Q社への新サービス提案
+  agenda: 新サービスのトライアル提案
+  duration_min: 45
+  participants:
+    - {id: a, name: 高橋, role: 当社 営業}
+    - {id: b, name: 坂本課長, role: 取引先Q社の課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 20, text: まずは小規模にトライアルしていただけないでしょうか。}
+    - {speaker: b, minute: 21, text: 面白い取り組みだと思います。ただ、弊社では前例がないものですから…。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s69
+  split: test2
+  note: 「一度社内で揉んでみます」＋期日なしは実質No
+  title: R社への値引き交渉
+  agenda: 年間契約の更新条件
+  duration_min: 30
+  participants:
+    - {id: a, name: 田中, role: 当社 営業}
+    - {id: b, name: 川口部長, role: 取引先R社の部長, senior: true}
+  utterances:
+    - {speaker: a, minute: 15, text: 3年契約にしていただければ、10%お値引きできますが、いかがでしょう。}
+    - {speaker: b, minute: 16, text: ありがたいお話です。一度社内で揉んでみますね。, expect: {move: stay_silent, tatemae: true}}
+
+- id: s70
+  split: test2
+  note: 部下への依頼に「タイミングを見て」は実質No（上司から部下でも建前はある）
+  title: 部内の改善提案
+  agenda: 改善提案の採否
+  duration_min: 30
+  participants:
+    - {id: a, name: 中村, role: 担当}
+    - {id: b, name: 佐藤, role: 課長, senior: true}
+  utterances:
+    - {speaker: a, minute: 10, text: 週次報告をやめて、チャットでの日次共有に切り替えませんか。}
+    - {speaker: b, minute: 11, text: なるほどね。まあ、タイミングを見て考えようか。, expect: {move: stay_silent, tatemae: true}}

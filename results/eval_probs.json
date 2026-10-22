@@ -1,0 +1,1483 @@
+{
+ "s01": [
+  {
+   "has_error": 0.0766,
+   "is_vague": 0.2903,
+   "off_agenda": 0.0464,
+   "needs_silent_expert": 0.6482,
+   "is_response_to_request": 0.4996,
+   "polite_refusal": 0.3716,
+   "open_question": 0.403
+  },
+  {
+   "has_error": 0.1443,
+   "is_vague": 0.2707,
+   "off_agenda": 0.0508,
+   "needs_silent_expert": 0.6367,
+   "is_response_to_request": 0.643,
+   "polite_refusal": 0.1203,
+   "open_question": 0.1572
+  }
+ ],
+ "s02": [
+  {
+   "has_error": 0.0609,
+   "is_vague": 0.3205,
+   "off_agenda": 0.0784,
+   "needs_silent_expert": 0.6192,
+   "is_response_to_request": 0.4846,
+   "polite_refusal": 0.5652,
+   "open_question": 0.3986
+  },
+  {
+   "has_error": 0.0639,
+   "is_vague": 0.2306,
+   "off_agenda": 0.0506,
+   "needs_silent_expert": 0.5898,
+   "is_response_to_request": 0.8631,
+   "polite_refusal": 0.0587,
+   "open_question": 0.084
+  }
+ ],
+ "s03": [
+  {
+   "has_error": 0.1061,
+   "is_vague": 0.2938,
+   "off_agenda": 0.0882,
+   "needs_silent_expert": 0.5868,
+   "is_response_to_request": 0.4672,
+   "polite_refusal": 0.3719,
+   "open_question": 0.2637
+  },
+  {
+   "has_error": 0.1305,
+   "is_vague": 0.2066,
+   "off_agenda": 0.0479,
+   "needs_silent_expert": 0.4615,
+   "is_response_to_request": 0.7605,
+   "polite_refusal": 0.0838,
+   "open_question": 0.0694
+  }
+ ],
+ "s04": [
+  {
+   "has_error": 0.0943,
+   "is_vague": 0.2722,
+   "off_agenda": 0.0981,
+   "needs_silent_expert": 0.6213,
+   "is_response_to_request": 0.1048,
+   "polite_refusal": 0.672,
+   "open_question": 0.1546
+  }
+ ],
+ "s07": [
+  {
+   "has_error": 0.0959,
+   "is_vague": 0.3428,
+   "off_agenda": 0.0728,
+   "needs_silent_expert": 0.6306,
+   "is_response_to_request": 0.2558,
+   "polite_refusal": 0.6823,
+   "open_question": 0.353
+  },
+  {
+   "has_error": 0.1928,
+   "is_vague": 0.2663,
+   "off_agenda": 0.0559,
+   "needs_silent_expert": 0.683,
+   "is_response_to_request": 0.26,
+   "polite_refusal": 0.3952,
+   "open_question": 0.2305
+  }
+ ],
+ "s08": [
+  {
+   "has_error": 0.1766,
+   "is_vague": 0.308,
+   "off_agenda": 0.0863,
+   "needs_silent_expert": 0.5595,
+   "is_response_to_request": 0.2079,
+   "polite_refusal": 0.0797,
+   "open_question": 0.174
+  },
+  {
+   "has_error": 0.0904,
+   "is_vague": 0.2621,
+   "off_agenda": 0.063,
+   "needs_silent_expert": 0.5409,
+   "is_response_to_request": 0.6489,
+   "polite_refusal": 0.0593,
+   "open_question": 0.068
+  }
+ ],
+ "s09": [
+  {
+   "has_error": 0.0782,
+   "is_vague": 0.5582,
+   "off_agenda": 0.0488,
+   "needs_silent_expert": 0.5927,
+   "is_response_to_request": 0.3114,
+   "polite_refusal": 0.3174,
+   "open_question": 0.2536
+  }
+ ],
+ "s11": [
+  {
+   "has_error": 0.0841,
+   "is_vague": 0.2673,
+   "off_agenda": 0.0401,
+   "needs_silent_expert": 0.639,
+   "is_response_to_request": 0.4943,
+   "polite_refusal": 0.4927,
+   "open_question": 0.1612
+  },
+  {
+   "has_error": 0.1014,
+   "is_vague": 0.3372,
+   "off_agenda": 0.0353,
+   "needs_silent_expert": 0.5721,
+   "is_response_to_request": 0.5436,
+   "polite_refusal": 0.7282,
+   "open_question": 0.1651
+  }
+ ],
+ "s13": [
+  {
+   "has_error": 0.0857,
+   "is_vague": 0.263,
+   "off_agenda": 0.244,
+   "needs_silent_expert": 0.6118,
+   "is_response_to_request": 0.3092,
+   "polite_refusal": 0.6744,
+   "open_question": 0.715
+  },
+  {
+   "has_error": 0.1111,
+   "is_vague": 0.2908,
+   "off_agenda": 0.151,
+   "needs_silent_expert": 0.6471,
+   "is_response_to_request": 0.3873,
+   "polite_refusal": 0.7066,
+   "open_question": 0.252
+  }
+ ],
+ "s15": [
+  {
+   "has_error": 0.0849,
+   "is_vague": 0.3305,
+   "off_agenda": 0.0497,
+   "needs_silent_expert": 0.6787,
+   "is_response_to_request": 0.2692,
+   "polite_refusal": 0.2733,
+   "open_question": 0.4773
+  },
+  {
+   "has_error": 0.7915,
+   "is_vague": 0.2728,
+   "off_agenda": 0.0775,
+   "needs_silent_expert": 0.5735,
+   "is_response_to_request": 0.4451,
+   "polite_refusal": 0.4107,
+   "open_question": 0.2464
+  }
+ ],
+ "s16": [
+  {
+   "has_error": 0.2274,
+   "is_vague": 0.3079,
+   "off_agenda": 0.0597,
+   "needs_silent_expert": 0.6747,
+   "is_response_to_request": 0.4305,
+   "polite_refusal": 0.3129,
+   "open_question": 0.2144
+  },
+  {
+   "has_error": 0.8621,
+   "is_vague": 0.2822,
+   "off_agenda": 0.0549,
+   "needs_silent_expert": 0.6405,
+   "is_response_to_request": 0.5963,
+   "polite_refusal": 0.4987,
+   "open_question": 0.2079
+  }
+ ],
+ "s17": [
+  {
+   "has_error": 0.1445,
+   "is_vague": 0.4353,
+   "off_agenda": 0.0524,
+   "needs_silent_expert": 0.6151,
+   "is_response_to_request": 0.3135,
+   "polite_refusal": 0.7307,
+   "open_question": 0.7169
+  },
+  {
+   "has_error": 0.2171,
+   "is_vague": 0.3261,
+   "off_agenda": 0.0384,
+   "needs_silent_expert": 0.528,
+   "is_response_to_request": 0.575,
+   "polite_refusal": 0.2812,
+   "open_question": 0.202
+  }
+ ],
+ "s19": [
+  {
+   "has_error": 0.1386,
+   "is_vague": 0.2935,
+   "off_agenda": 0.0409,
+   "needs_silent_expert": 0.6685,
+   "is_response_to_request": 0.3252,
+   "polite_refusal": 0.6565,
+   "open_question": 0.2644
+  },
+  {
+   "has_error": 0.4489,
+   "is_vague": 0.2462,
+   "off_agenda": 0.0388,
+   "needs_silent_expert": 0.6502,
+   "is_response_to_request": 0.4688,
+   "polite_refusal": 0.7506,
+   "open_question": 0.1923
+  }
+ ],
+ "s20": [
+  {
+   "has_error": 0.1136,
+   "is_vague": 0.3198,
+   "off_agenda": 0.0488,
+   "needs_silent_expert": 0.6322,
+   "is_response_to_request": 0.2503,
+   "polite_refusal": 0.7197,
+   "open_question": 0.4506
+  },
+  {
+   "has_error": 0.1649,
+   "is_vague": 0.3001,
+   "off_agenda": 0.0361,
+   "needs_silent_expert": 0.5999,
+   "is_response_to_request": 0.449,
+   "polite_refusal": 0.7551,
+   "open_question": 0.224
+  }
+ ],
+ "s23": [
+  {
+   "has_error": 0.1095,
+   "is_vague": 0.6491,
+   "off_agenda": 0.1333,
+   "needs_silent_expert": 0.5195,
+   "is_response_to_request": 0.3505,
+   "polite_refusal": 0.1257,
+   "open_question": 0.1713
+  },
+  {
+   "has_error": 0.0656,
+   "is_vague": 0.6427,
+   "off_agenda": 0.0998,
+   "needs_silent_expert": 0.4592,
+   "is_response_to_request": 0.5683,
+   "polite_refusal": 0.1228,
+   "open_question": 0.1191
+  }
+ ],
+ "s24": [
+  {
+   "has_error": 0.0982,
+   "is_vague": 0.5572,
+   "off_agenda": 0.3831,
+   "needs_silent_expert": 0.5088,
+   "is_response_to_request": 0.3952,
+   "polite_refusal": 0.641,
+   "open_question": 0.6054
+  },
+  {
+   "has_error": 0.093,
+   "is_vague": 0.5225,
+   "off_agenda": 0.1456,
+   "needs_silent_expert": 0.5326,
+   "is_response_to_request": 0.7252,
+   "polite_refusal": 0.2575,
+   "open_question": 0.1392
+  }
+ ],
+ "s26": [
+  {
+   "has_error": 0.1099,
+   "is_vague": 0.7835,
+   "off_agenda": 0.0917,
+   "needs_silent_expert": 0.5664,
+   "is_response_to_request": 0.2673,
+   "polite_refusal": 0.3858,
+   "open_question": 0.2063
+  },
+  {
+   "has_error": 0.0771,
+   "is_vague": 0.6644,
+   "off_agenda": 0.0773,
+   "needs_silent_expert": 0.4845,
+   "is_response_to_request": 0.5202,
+   "polite_refusal": 0.1872,
+   "open_question": 0.1143
+  }
+ ],
+ "s28": [
+  {
+   "has_error": 0.0845,
+   "is_vague": 0.6263,
+   "off_agenda": 0.0445,
+   "needs_silent_expert": 0.5934,
+   "is_response_to_request": 0.4468,
+   "polite_refusal": 0.6472,
+   "open_question": 0.4429
+  },
+  {
+   "has_error": 0.0845,
+   "is_vague": 0.5101,
+   "off_agenda": 0.0488,
+   "needs_silent_expert": 0.4902,
+   "is_response_to_request": 0.8006,
+   "polite_refusal": 0.1574,
+   "open_question": 0.0904
+  }
+ ],
+ "s29": [
+  {
+   "has_error": 0.0902,
+   "is_vague": 0.3138,
+   "off_agenda": 0.0602,
+   "needs_silent_expert": 0.8197,
+   "is_response_to_request": 0.463,
+   "polite_refusal": 0.5089,
+   "open_question": 0.1684
+  },
+  {
+   "has_error": 0.1025,
+   "is_vague": 0.4817,
+   "off_agenda": 0.0751,
+   "needs_silent_expert": 0.8355,
+   "is_response_to_request": 0.5389,
+   "polite_refusal": 0.6901,
+   "open_question": 0.9165
+  }
+ ],
+ "s30": [
+  {
+   "has_error": 0.1566,
+   "is_vague": 0.2982,
+   "off_agenda": 0.134,
+   "needs_silent_expert": 0.6871,
+   "is_response_to_request": 0.3467,
+   "polite_refusal": 0.4529,
+   "open_question": 0.2201
+  },
+  {
+   "has_error": 0.0869,
+   "is_vague": 0.3475,
+   "off_agenda": 0.0749,
+   "needs_silent_expert": 0.7526,
+   "is_response_to_request": 0.3726,
+   "polite_refusal": 0.8031,
+   "open_question": 0.9359
+  }
+ ],
+ "s31": [
+  {
+   "has_error": 0.193,
+   "is_vague": 0.2581,
+   "off_agenda": 0.0654,
+   "needs_silent_expert": 0.6812,
+   "is_response_to_request": 0.4524,
+   "polite_refusal": 0.6431,
+   "open_question": 0.1841
+  },
+  {
+   "has_error": 0.116,
+   "is_vague": 0.3275,
+   "off_agenda": 0.0887,
+   "needs_silent_expert": 0.7062,
+   "is_response_to_request": 0.3635,
+   "polite_refusal": 0.7732,
+   "open_question": 0.9303
+  }
+ ],
+ "s32": [
+  {
+   "has_error": 0.1295,
+   "is_vague": 0.3371,
+   "off_agenda": 0.0503,
+   "needs_silent_expert": 0.705,
+   "is_response_to_request": 0.2378,
+   "polite_refusal": 0.7278,
+   "open_question": 0.1806
+  },
+  {
+   "has_error": 0.0911,
+   "is_vague": 0.4984,
+   "off_agenda": 0.0816,
+   "needs_silent_expert": 0.7221,
+   "is_response_to_request": 0.4866,
+   "polite_refusal": 0.8915,
+   "open_question": 0.7017
+  }
+ ],
+ "s36": [
+  {
+   "has_error": 0.1416,
+   "is_vague": 0.3442,
+   "off_agenda": 0.049,
+   "needs_silent_expert": 0.5869,
+   "is_response_to_request": 0.4904,
+   "polite_refusal": 0.7587,
+   "open_question": 0.2894
+  },
+  {
+   "has_error": 0.0905,
+   "is_vague": 0.3562,
+   "off_agenda": 0.6621,
+   "needs_silent_expert": 0.5358,
+   "is_response_to_request": 0.139,
+   "polite_refusal": 0.8032,
+   "open_question": 0.7212
+  },
+  {
+   "has_error": 0.1232,
+   "is_vague": 0.3401,
+   "off_agenda": 0.7382,
+   "needs_silent_expert": 0.4983,
+   "is_response_to_request": 0.24,
+   "polite_refusal": 0.7849,
+   "open_question": 0.1882
+  }
+ ],
+ "s37": [
+  {
+   "has_error": 0.1934,
+   "is_vague": 0.3492,
+   "off_agenda": 0.0566,
+   "needs_silent_expert": 0.654,
+   "is_response_to_request": 0.2004,
+   "polite_refusal": 0.7111,
+   "open_question": 0.1846
+  },
+  {
+   "has_error": 0.123,
+   "is_vague": 0.4441,
+   "off_agenda": 0.8991,
+   "needs_silent_expert": 0.7308,
+   "is_response_to_request": 0.1374,
+   "polite_refusal": 0.8642,
+   "open_question": 0.5859
+  },
+  {
+   "has_error": 0.1158,
+   "is_vague": 0.4017,
+   "off_agenda": 0.8619,
+   "needs_silent_expert": 0.6683,
+   "is_response_to_request": 0.1901,
+   "polite_refusal": 0.8014,
+   "open_question": 0.1263
+  }
+ ],
+ "s38": [
+  {
+   "has_error": 0.2634,
+   "is_vague": 0.2876,
+   "off_agenda": 0.0553,
+   "needs_silent_expert": 0.6455,
+   "is_response_to_request": 0.229,
+   "polite_refusal": 0.4705,
+   "open_question": 0.1471
+  },
+  {
+   "has_error": 0.1224,
+   "is_vague": 0.3502,
+   "off_agenda": 0.5308,
+   "needs_silent_expert": 0.5805,
+   "is_response_to_request": 0.1263,
+   "polite_refusal": 0.8027,
+   "open_question": 0.2474
+  },
+  {
+   "has_error": 0.1166,
+   "is_vague": 0.3342,
+   "off_agenda": 0.2227,
+   "needs_silent_expert": 0.558,
+   "is_response_to_request": 0.1623,
+   "polite_refusal": 0.8182,
+   "open_question": 0.1481
+  }
+ ],
+ "s39": [
+  {
+   "has_error": 0.0821,
+   "is_vague": 0.2663,
+   "off_agenda": 0.0503,
+   "needs_silent_expert": 0.5939,
+   "is_response_to_request": 0.2791,
+   "polite_refusal": 0.8154,
+   "open_question": 0.6272
+  },
+  {
+   "has_error": 0.1501,
+   "is_vague": 0.327,
+   "off_agenda": 0.8807,
+   "needs_silent_expert": 0.5587,
+   "is_response_to_request": 0.1678,
+   "polite_refusal": 0.8043,
+   "open_question": 0.423
+  },
+  {
+   "has_error": 0.1074,
+   "is_vague": 0.3406,
+   "off_agenda": 0.7404,
+   "needs_silent_expert": 0.5261,
+   "is_response_to_request": 0.1952,
+   "polite_refusal": 0.7596,
+   "open_question": 0.2416
+  }
+ ],
+ "s43": [
+  {
+   "has_error": 0.0896,
+   "is_vague": 0.2711,
+   "off_agenda": 0.0576,
+   "needs_silent_expert": 0.6299,
+   "is_response_to_request": 0.5032,
+   "polite_refusal": 0.4546,
+   "open_question": 0.1869
+  },
+  {
+   "has_error": 0.0887,
+   "is_vague": 0.2816,
+   "off_agenda": 0.0443,
+   "needs_silent_expert": 0.6698,
+   "is_response_to_request": 0.7156,
+   "polite_refusal": 0.9082,
+   "open_question": 0.0999
+  }
+ ],
+ "s44": [
+  {
+   "has_error": 0.1633,
+   "is_vague": 0.2439,
+   "off_agenda": 0.0425,
+   "needs_silent_expert": 0.5732,
+   "is_response_to_request": 0.5297,
+   "polite_refusal": 0.731,
+   "open_question": 0.2115
+  },
+  {
+   "has_error": 0.1021,
+   "is_vague": 0.2786,
+   "off_agenda": 0.0448,
+   "needs_silent_expert": 0.539,
+   "is_response_to_request": 0.8263,
+   "polite_refusal": 0.9115,
+   "open_question": 0.1175
+  }
+ ],
+ "s45": [
+  {
+   "has_error": 0.1395,
+   "is_vague": 0.2765,
+   "off_agenda": 0.0401,
+   "needs_silent_expert": 0.5949,
+   "is_response_to_request": 0.3769,
+   "polite_refusal": 0.799,
+   "open_question": 0.4457
+  },
+  {
+   "has_error": 0.1088,
+   "is_vague": 0.3111,
+   "off_agenda": 0.0424,
+   "needs_silent_expert": 0.5975,
+   "is_response_to_request": 0.8127,
+   "polite_refusal": 0.8982,
+   "open_question": 0.1318
+  }
+ ],
+ "s46": [
+  {
+   "has_error": 0.0977,
+   "is_vague": 0.3503,
+   "off_agenda": 0.0494,
+   "needs_silent_expert": 0.6222,
+   "is_response_to_request": 0.3874,
+   "polite_refusal": 0.7603,
+   "open_question": 0.4905
+  },
+  {
+   "has_error": 0.0825,
+   "is_vague": 0.3532,
+   "off_agenda": 0.0425,
+   "needs_silent_expert": 0.5825,
+   "is_response_to_request": 0.7664,
+   "polite_refusal": 0.9374,
+   "open_question": 0.1249
+  }
+ ],
+ "s47": [
+  {
+   "has_error": 0.0838,
+   "is_vague": 0.2901,
+   "off_agenda": 0.0486,
+   "needs_silent_expert": 0.722,
+   "is_response_to_request": 0.5162,
+   "polite_refusal": 0.6932,
+   "open_question": 0.4097
+  },
+  {
+   "has_error": 0.0806,
+   "is_vague": 0.2945,
+   "off_agenda": 0.0391,
+   "needs_silent_expert": 0.6728,
+   "is_response_to_request": 0.8023,
+   "polite_refusal": 0.9239,
+   "open_question": 0.1488
+  }
+ ],
+ "s05": [
+  {
+   "has_error": 0.0708,
+   "is_vague": 0.382,
+   "off_agenda": 0.0477,
+   "needs_silent_expert": 0.7046,
+   "is_response_to_request": 0.3855,
+   "polite_refusal": 0.7473,
+   "open_question": 0.9154
+  },
+  {
+   "has_error": 0.086,
+   "is_vague": 0.2754,
+   "off_agenda": 0.0373,
+   "needs_silent_expert": 0.5812,
+   "is_response_to_request": 0.7636,
+   "polite_refusal": 0.6618,
+   "open_question": 0.3471
+  }
+ ],
+ "s06": [
+  {
+   "has_error": 0.0758,
+   "is_vague": 0.3623,
+   "off_agenda": 0.0953,
+   "needs_silent_expert": 0.5764,
+   "is_response_to_request": 0.2208,
+   "polite_refusal": 0.7166,
+   "open_question": 0.4323
+  },
+  {
+   "has_error": 0.1145,
+   "is_vague": 0.3553,
+   "off_agenda": 0.7313,
+   "needs_silent_expert": 0.6147,
+   "is_response_to_request": 0.1358,
+   "polite_refusal": 0.822,
+   "open_question": 0.1946
+  }
+ ],
+ "s10": [
+  {
+   "has_error": 0.0844,
+   "is_vague": 0.3032,
+   "off_agenda": 0.0436,
+   "needs_silent_expert": 0.5758,
+   "is_response_to_request": 0.5234,
+   "polite_refusal": 0.5084,
+   "open_question": 0.3016
+  },
+  {
+   "has_error": 0.1017,
+   "is_vague": 0.2452,
+   "off_agenda": 0.0436,
+   "needs_silent_expert": 0.5053,
+   "is_response_to_request": 0.802,
+   "polite_refusal": 0.0434,
+   "open_question": 0.0721
+  }
+ ],
+ "s12": [
+  {
+   "has_error": 0.1175,
+   "is_vague": 0.2922,
+   "off_agenda": 0.0467,
+   "needs_silent_expert": 0.5817,
+   "is_response_to_request": 0.4247,
+   "polite_refusal": 0.6455,
+   "open_question": 0.1512
+  },
+  {
+   "has_error": 0.1394,
+   "is_vague": 0.2431,
+   "off_agenda": 0.0456,
+   "needs_silent_expert": 0.3706,
+   "is_response_to_request": 0.5416,
+   "polite_refusal": 0.056,
+   "open_question": 0.0858
+  }
+ ],
+ "s14": [
+  {
+   "has_error": 0.3677,
+   "is_vague": 0.2689,
+   "off_agenda": 0.0666,
+   "needs_silent_expert": 0.6657,
+   "is_response_to_request": 0.3206,
+   "polite_refusal": 0.5547,
+   "open_question": 0.1933
+  },
+  {
+   "has_error": 0.7515,
+   "is_vague": 0.2377,
+   "off_agenda": 0.049,
+   "needs_silent_expert": 0.6268,
+   "is_response_to_request": 0.5145,
+   "polite_refusal": 0.4819,
+   "open_question": 0.1437
+  },
+  {
+   "has_error": 0.4058,
+   "is_vague": 0.244,
+   "off_agenda": 0.0444,
+   "needs_silent_expert": 0.5011,
+   "is_response_to_request": 0.5543,
+   "polite_refusal": 0.5746,
+   "open_question": 0.7225
+  }
+ ],
+ "s18": [
+  {
+   "has_error": 0.1018,
+   "is_vague": 0.4803,
+   "off_agenda": 0.0474,
+   "needs_silent_expert": 0.6422,
+   "is_response_to_request": 0.4154,
+   "polite_refusal": 0.781,
+   "open_question": 0.7351
+  },
+  {
+   "has_error": 0.749,
+   "is_vague": 0.3104,
+   "off_agenda": 0.0405,
+   "needs_silent_expert": 0.5805,
+   "is_response_to_request": 0.6895,
+   "polite_refusal": 0.5226,
+   "open_question": 0.3206
+  }
+ ],
+ "s21": [
+  {
+   "has_error": 0.0932,
+   "is_vague": 0.2975,
+   "off_agenda": 0.0598,
+   "needs_silent_expert": 0.6551,
+   "is_response_to_request": 0.3385,
+   "polite_refusal": 0.7454,
+   "open_question": 0.2213
+  },
+  {
+   "has_error": 0.8271,
+   "is_vague": 0.3461,
+   "off_agenda": 0.105,
+   "needs_silent_expert": 0.648,
+   "is_response_to_request": 0.2126,
+   "polite_refusal": 0.7132,
+   "open_question": 0.1393
+  }
+ ],
+ "s22": [
+  {
+   "has_error": 0.0866,
+   "is_vague": 0.4394,
+   "off_agenda": 0.4832,
+   "needs_silent_expert": 0.6881,
+   "is_response_to_request": 0.2972,
+   "polite_refusal": 0.8021,
+   "open_question": 0.4095
+  },
+  {
+   "has_error": 0.2083,
+   "is_vague": 0.3004,
+   "off_agenda": 0.1636,
+   "needs_silent_expert": 0.6563,
+   "is_response_to_request": 0.544,
+   "polite_refusal": 0.3037,
+   "open_question": 0.1587
+  }
+ ],
+ "s25": [
+  {
+   "has_error": 0.0839,
+   "is_vague": 0.6167,
+   "off_agenda": 0.0753,
+   "needs_silent_expert": 0.6337,
+   "is_response_to_request": 0.2601,
+   "polite_refusal": 0.4561,
+   "open_question": 0.1672
+  },
+  {
+   "has_error": 0.0744,
+   "is_vague": 0.5136,
+   "off_agenda": 0.0579,
+   "needs_silent_expert": 0.5354,
+   "is_response_to_request": 0.6016,
+   "polite_refusal": 0.3188,
+   "open_question": 0.0866
+  }
+ ],
+ "s27": [
+  {
+   "has_error": 0.1081,
+   "is_vague": 0.7219,
+   "off_agenda": 0.082,
+   "needs_silent_expert": 0.6907,
+   "is_response_to_request": 0.2821,
+   "polite_refusal": 0.4245,
+   "open_question": 0.2045
+  },
+  {
+   "has_error": 0.0878,
+   "is_vague": 0.5572,
+   "off_agenda": 0.0495,
+   "needs_silent_expert": 0.57,
+   "is_response_to_request": 0.5389,
+   "polite_refusal": 0.1366,
+   "open_question": 0.096
+  }
+ ],
+ "s33": [
+  {
+   "has_error": 0.1008,
+   "is_vague": 0.3023,
+   "off_agenda": 0.0501,
+   "needs_silent_expert": 0.7165,
+   "is_response_to_request": 0.2213,
+   "polite_refusal": 0.7855,
+   "open_question": 0.1786
+  },
+  {
+   "has_error": 0.0793,
+   "is_vague": 0.3341,
+   "off_agenda": 0.0553,
+   "needs_silent_expert": 0.6536,
+   "is_response_to_request": 0.2977,
+   "polite_refusal": 0.8242,
+   "open_question": 0.9182
+  }
+ ],
+ "s34": [
+  {
+   "has_error": 0.1647,
+   "is_vague": 0.3252,
+   "off_agenda": 0.0974,
+   "needs_silent_expert": 0.823,
+   "is_response_to_request": 0.4903,
+   "polite_refusal": 0.4886,
+   "open_question": 0.2183
+  },
+  {
+   "has_error": 0.1256,
+   "is_vague": 0.3119,
+   "off_agenda": 0.061,
+   "needs_silent_expert": 0.7852,
+   "is_response_to_request": 0.2512,
+   "polite_refusal": 0.8026,
+   "open_question": 0.9099
+  }
+ ],
+ "s35": [
+  {
+   "has_error": 0.0714,
+   "is_vague": 0.3501,
+   "off_agenda": 0.042,
+   "needs_silent_expert": 0.6961,
+   "is_response_to_request": 0.4196,
+   "polite_refusal": 0.7774,
+   "open_question": 0.4716
+  },
+  {
+   "has_error": 0.0777,
+   "is_vague": 0.3073,
+   "off_agenda": 0.05,
+   "needs_silent_expert": 0.6436,
+   "is_response_to_request": 0.4049,
+   "polite_refusal": 0.5901,
+   "open_question": 0.84
+  }
+ ],
+ "s40": [
+  {
+   "has_error": 0.1859,
+   "is_vague": 0.2273,
+   "off_agenda": 0.0486,
+   "needs_silent_expert": 0.6627,
+   "is_response_to_request": 0.2755,
+   "polite_refusal": 0.6136,
+   "open_question": 0.4228
+  },
+  {
+   "has_error": 0.1106,
+   "is_vague": 0.41,
+   "off_agenda": 0.8362,
+   "needs_silent_expert": 0.6008,
+   "is_response_to_request": 0.157,
+   "polite_refusal": 0.7653,
+   "open_question": 0.8573
+  },
+  {
+   "has_error": 0.1632,
+   "is_vague": 0.3731,
+   "off_agenda": 0.831,
+   "needs_silent_expert": 0.578,
+   "is_response_to_request": 0.25,
+   "polite_refusal": 0.7816,
+   "open_question": 0.4228
+  }
+ ],
+ "s41": [
+  {
+   "has_error": 0.064,
+   "is_vague": 0.3466,
+   "off_agenda": 0.0447,
+   "needs_silent_expert": 0.6373,
+   "is_response_to_request": 0.2612,
+   "polite_refusal": 0.7853,
+   "open_question": 0.2555
+  },
+  {
+   "has_error": 0.1577,
+   "is_vague": 0.4242,
+   "off_agenda": 0.8711,
+   "needs_silent_expert": 0.6694,
+   "is_response_to_request": 0.1835,
+   "polite_refusal": 0.8322,
+   "open_question": 0.2424
+  },
+  {
+   "has_error": 0.1293,
+   "is_vague": 0.4143,
+   "off_agenda": 0.7463,
+   "needs_silent_expert": 0.5848,
+   "is_response_to_request": 0.2516,
+   "polite_refusal": 0.7708,
+   "open_question": 0.4315
+  }
+ ],
+ "s42": [
+  {
+   "has_error": 0.058,
+   "is_vague": 0.2943,
+   "off_agenda": 0.0855,
+   "needs_silent_expert": 0.683,
+   "is_response_to_request": 0.2958,
+   "polite_refusal": 0.6858,
+   "open_question": 0.2439
+  },
+  {
+   "has_error": 0.0839,
+   "is_vague": 0.3025,
+   "off_agenda": 0.2274,
+   "needs_silent_expert": 0.5903,
+   "is_response_to_request": 0.328,
+   "polite_refusal": 0.5135,
+   "open_question": 0.4914
+  },
+  {
+   "has_error": 0.0899,
+   "is_vague": 0.2928,
+   "off_agenda": 0.1419,
+   "needs_silent_expert": 0.6533,
+   "is_response_to_request": 0.3531,
+   "polite_refusal": 0.6474,
+   "open_question": 0.2659
+  }
+ ],
+ "s48": [
+  {
+   "has_error": 0.1181,
+   "is_vague": 0.2608,
+   "off_agenda": 0.0406,
+   "needs_silent_expert": 0.6391,
+   "is_response_to_request": 0.5093,
+   "polite_refusal": 0.7042,
+   "open_question": 0.4976
+  },
+  {
+   "has_error": 0.1485,
+   "is_vague": 0.2559,
+   "off_agenda": 0.039,
+   "needs_silent_expert": 0.5229,
+   "is_response_to_request": 0.8938,
+   "polite_refusal": 0.2556,
+   "open_question": 0.0751
+  }
+ ],
+ "s49": [
+  {
+   "has_error": 0.0723,
+   "is_vague": 0.3088,
+   "off_agenda": 0.0629,
+   "needs_silent_expert": 0.5767,
+   "is_response_to_request": 0.4474,
+   "polite_refusal": 0.2867,
+   "open_question": 0.4087
+  },
+  {
+   "has_error": 0.0786,
+   "is_vague": 0.334,
+   "off_agenda": 0.0568,
+   "needs_silent_expert": 0.5733,
+   "is_response_to_request": 0.7803,
+   "polite_refusal": 0.8342,
+   "open_question": 0.1852
+  }
+ ],
+ "s50": [
+  {
+   "has_error": 0.1029,
+   "is_vague": 0.2846,
+   "off_agenda": 0.0483,
+   "needs_silent_expert": 0.5662,
+   "is_response_to_request": 0.6004,
+   "polite_refusal": 0.4677,
+   "open_question": 0.2874
+  },
+  {
+   "has_error": 0.092,
+   "is_vague": 0.2428,
+   "off_agenda": 0.0546,
+   "needs_silent_expert": 0.5367,
+   "is_response_to_request": 0.9182,
+   "polite_refusal": 0.714,
+   "open_question": 0.0784
+  }
+ ],
+ "s51": [
+  {
+   "has_error": 0.0948,
+   "is_vague": 0.2795,
+   "off_agenda": 0.0502,
+   "needs_silent_expert": 0.6172,
+   "is_response_to_request": 0.4698,
+   "polite_refusal": 0.5198,
+   "open_question": 0.6444
+  },
+  {
+   "has_error": 0.1812,
+   "is_vague": 0.202,
+   "off_agenda": 0.041,
+   "needs_silent_expert": 0.4771,
+   "is_response_to_request": 0.8196,
+   "polite_refusal": 0.3647,
+   "open_question": 0.1252
+  }
+ ],
+ "s52": [
+  {
+   "has_error": 0.1016,
+   "is_vague": 0.3122,
+   "off_agenda": 0.0808,
+   "needs_silent_expert": 0.572,
+   "is_response_to_request": 0.3081,
+   "polite_refusal": 0.0671,
+   "open_question": 0.1429
+  },
+  {
+   "has_error": 0.0812,
+   "is_vague": 0.2481,
+   "off_agenda": 0.058,
+   "needs_silent_expert": 0.5471,
+   "is_response_to_request": 0.829,
+   "polite_refusal": 0.0503,
+   "open_question": 0.0657
+  }
+ ],
+ "s53": [
+  {
+   "has_error": 0.0843,
+   "is_vague": 0.2824,
+   "off_agenda": 0.0528,
+   "needs_silent_expert": 0.5951,
+   "is_response_to_request": 0.4206,
+   "polite_refusal": 0.6023,
+   "open_question": 0.286
+  },
+  {
+   "has_error": 0.1329,
+   "is_vague": 0.2524,
+   "off_agenda": 0.0452,
+   "needs_silent_expert": 0.4859,
+   "is_response_to_request": 0.7909,
+   "polite_refusal": 0.1622,
+   "open_question": 0.0852
+  }
+ ],
+ "s54": [
+  {
+   "has_error": 0.3214,
+   "is_vague": 0.3029,
+   "off_agenda": 0.0344,
+   "needs_silent_expert": 0.6123,
+   "is_response_to_request": 0.5367,
+   "polite_refusal": 0.791,
+   "open_question": 0.1313
+  },
+  {
+   "has_error": 0.2231,
+   "is_vague": 0.2981,
+   "off_agenda": 0.0392,
+   "needs_silent_expert": 0.4713,
+   "is_response_to_request": 0.5759,
+   "polite_refusal": 0.6845,
+   "open_question": 0.1377
+  }
+ ],
+ "s55": [
+  {
+   "has_error": 0.0791,
+   "is_vague": 0.3117,
+   "off_agenda": 0.0373,
+   "needs_silent_expert": 0.7031,
+   "is_response_to_request": 0.2431,
+   "polite_refusal": 0.8042,
+   "open_question": 0.7297
+  },
+  {
+   "has_error": 0.0851,
+   "is_vague": 0.2351,
+   "off_agenda": 0.054,
+   "needs_silent_expert": 0.7219,
+   "is_response_to_request": 0.4181,
+   "polite_refusal": 0.8141,
+   "open_question": 0.5427
+  },
+  {
+   "has_error": 0.0601,
+   "is_vague": 0.2811,
+   "off_agenda": 0.0394,
+   "needs_silent_expert": 0.8346,
+   "is_response_to_request": 0.5997,
+   "polite_refusal": 0.7605,
+   "open_question": 0.7162
+  }
+ ],
+ "s56": [
+  {
+   "has_error": 0.0971,
+   "is_vague": 0.2542,
+   "off_agenda": 0.0466,
+   "needs_silent_expert": 0.6305,
+   "is_response_to_request": 0.2041,
+   "polite_refusal": 0.4192,
+   "open_question": 0.1215
+  },
+  {
+   "has_error": 0.0804,
+   "is_vague": 0.3728,
+   "off_agenda": 0.0503,
+   "needs_silent_expert": 0.5086,
+   "is_response_to_request": 0.3657,
+   "polite_refusal": 0.1327,
+   "open_question": 0.153
+  }
+ ],
+ "s57": [
+  {
+   "has_error": 0.1002,
+   "is_vague": 0.4412,
+   "off_agenda": 0.0572,
+   "needs_silent_expert": 0.6027,
+   "is_response_to_request": 0.2762,
+   "polite_refusal": 0.6541,
+   "open_question": 0.3358
+  },
+  {
+   "has_error": 0.8294,
+   "is_vague": 0.2732,
+   "off_agenda": 0.0415,
+   "needs_silent_expert": 0.5511,
+   "is_response_to_request": 0.5713,
+   "polite_refusal": 0.462,
+   "open_question": 0.1543
+  }
+ ],
+ "s58": [
+  {
+   "has_error": 0.089,
+   "is_vague": 0.4267,
+   "off_agenda": 0.069,
+   "needs_silent_expert": 0.597,
+   "is_response_to_request": 0.3141,
+   "polite_refusal": 0.5375,
+   "open_question": 0.4406
+  },
+  {
+   "has_error": 0.819,
+   "is_vague": 0.3186,
+   "off_agenda": 0.084,
+   "needs_silent_expert": 0.5386,
+   "is_response_to_request": 0.4771,
+   "polite_refusal": 0.2784,
+   "open_question": 0.1809
+  }
+ ],
+ "s59": [
+  {
+   "has_error": 0.096,
+   "is_vague": 0.3699,
+   "off_agenda": 0.0574,
+   "needs_silent_expert": 0.615,
+   "is_response_to_request": 0.437,
+   "polite_refusal": 0.6455,
+   "open_question": 0.406
+  },
+  {
+   "has_error": 0.1848,
+   "is_vague": 0.3214,
+   "off_agenda": 0.0525,
+   "needs_silent_expert": 0.5882,
+   "is_response_to_request": 0.6982,
+   "polite_refusal": 0.4641,
+   "open_question": 0.2066
+  }
+ ],
+ "s60": [
+  {
+   "has_error": 0.0826,
+   "is_vague": 0.7003,
+   "off_agenda": 0.0635,
+   "needs_silent_expert": 0.5771,
+   "is_response_to_request": 0.279,
+   "polite_refusal": 0.2058,
+   "open_question": 0.1836
+  },
+  {
+   "has_error": 0.0515,
+   "is_vague": 0.6823,
+   "off_agenda": 0.0657,
+   "needs_silent_expert": 0.5677,
+   "is_response_to_request": 0.3443,
+   "polite_refusal": 0.5698,
+   "open_question": 0.2438
+  }
+ ],
+ "s61": [
+  {
+   "has_error": 0.0965,
+   "is_vague": 0.6865,
+   "off_agenda": 0.0433,
+   "needs_silent_expert": 0.4989,
+   "is_response_to_request": 0.2015,
+   "polite_refusal": 0.0916,
+   "open_question": 0.1592
+  },
+  {
+   "has_error": 0.0733,
+   "is_vague": 0.6384,
+   "off_agenda": 0.0434,
+   "needs_silent_expert": 0.4338,
+   "is_response_to_request": 0.6798,
+   "polite_refusal": 0.114,
+   "open_question": 0.0741
+  }
+ ],
+ "s62": [
+  {
+   "has_error": 0.1039,
+   "is_vague": 0.6527,
+   "off_agenda": 0.1448,
+   "needs_silent_expert": 0.5913,
+   "is_response_to_request": 0.3612,
+   "polite_refusal": 0.376,
+   "open_question": 0.2016
+  },
+  {
+   "has_error": 0.0774,
+   "is_vague": 0.4579,
+   "off_agenda": 0.0706,
+   "needs_silent_expert": 0.5827,
+   "is_response_to_request": 0.6994,
+   "polite_refusal": 0.1318,
+   "open_question": 0.1009
+  }
+ ],
+ "s63": [
+  {
+   "has_error": 0.0906,
+   "is_vague": 0.3112,
+   "off_agenda": 0.0393,
+   "needs_silent_expert": 0.7613,
+   "is_response_to_request": 0.3324,
+   "polite_refusal": 0.7908,
+   "open_question": 0.1475
+  },
+  {
+   "has_error": 0.0866,
+   "is_vague": 0.5085,
+   "off_agenda": 0.0622,
+   "needs_silent_expert": 0.7755,
+   "is_response_to_request": 0.3909,
+   "polite_refusal": 0.8201,
+   "open_question": 0.8995
+  }
+ ],
+ "s64": [
+  {
+   "has_error": 0.1057,
+   "is_vague": 0.2795,
+   "off_agenda": 0.0596,
+   "needs_silent_expert": 0.7037,
+   "is_response_to_request": 0.2694,
+   "polite_refusal": 0.2782,
+   "open_question": 0.2117
+  },
+  {
+   "has_error": 0.1558,
+   "is_vague": 0.3735,
+   "off_agenda": 0.0704,
+   "needs_silent_expert": 0.6997,
+   "is_response_to_request": 0.3767,
+   "polite_refusal": 0.6174,
+   "open_question": 0.9139
+  }
+ ],
+ "s65": [
+  {
+   "has_error": 0.0725,
+   "is_vague": 0.303,
+   "off_agenda": 0.0584,
+   "needs_silent_expert": 0.8111,
+   "is_response_to_request": 0.3947,
+   "polite_refusal": 0.3441,
+   "open_question": 0.1935
+  },
+  {
+   "has_error": 0.0587,
+   "is_vague": 0.468,
+   "off_agenda": 0.0566,
+   "needs_silent_expert": 0.8299,
+   "is_response_to_request": 0.4363,
+   "polite_refusal": 0.7704,
+   "open_question": 0.9412
+  }
+ ],
+ "s66": [
+  {
+   "has_error": 0.0898,
+   "is_vague": 0.3142,
+   "off_agenda": 0.0466,
+   "needs_silent_expert": 0.692,
+   "is_response_to_request": 0.4979,
+   "polite_refusal": 0.7374,
+   "open_question": 0.1739
+  },
+  {
+   "has_error": 0.096,
+   "is_vague": 0.4142,
+   "off_agenda": 0.8222,
+   "needs_silent_expert": 0.6372,
+   "is_response_to_request": 0.1302,
+   "polite_refusal": 0.8445,
+   "open_question": 0.6948
+  },
+  {
+   "has_error": 0.0792,
+   "is_vague": 0.356,
+   "off_agenda": 0.7738,
+   "needs_silent_expert": 0.5733,
+   "is_response_to_request": 0.2803,
+   "polite_refusal": 0.7822,
+   "open_question": 0.1588
+  }
+ ],
+ "s67": [
+  {
+   "has_error": 0.0919,
+   "is_vague": 0.3302,
+   "off_agenda": 0.0703,
+   "needs_silent_expert": 0.6429,
+   "is_response_to_request": 0.3918,
+   "polite_refusal": 0.3475,
+   "open_question": 0.2034
+  },
+  {
+   "has_error": 0.1703,
+   "is_vague": 0.4031,
+   "off_agenda": 0.8955,
+   "needs_silent_expert": 0.6313,
+   "is_response_to_request": 0.1664,
+   "polite_refusal": 0.8037,
+   "open_question": 0.2723
+  },
+  {
+   "has_error": 0.1568,
+   "is_vague": 0.3935,
+   "off_agenda": 0.8036,
+   "needs_silent_expert": 0.5929,
+   "is_response_to_request": 0.1766,
+   "polite_refusal": 0.713,
+   "open_question": 0.227
+  }
+ ],
+ "s68": [
+  {
+   "has_error": 0.0733,
+   "is_vague": 0.3188,
+   "off_agenda": 0.0397,
+   "needs_silent_expert": 0.5259,
+   "is_response_to_request": 0.5365,
+   "polite_refusal": 0.7178,
+   "open_question": 0.1933
+  },
+  {
+   "has_error": 0.0664,
+   "is_vague": 0.4115,
+   "off_agenda": 0.0444,
+   "needs_silent_expert": 0.5647,
+   "is_response_to_request": 0.7063,
+   "polite_refusal": 0.9296,
+   "open_question": 0.1699
+  }
+ ],
+ "s69": [
+  {
+   "has_error": 0.1564,
+   "is_vague": 0.2534,
+   "off_agenda": 0.0516,
+   "needs_silent_expert": 0.5837,
+   "is_response_to_request": 0.5257,
+   "polite_refusal": 0.6682,
+   "open_question": 0.3316
+  },
+  {
+   "has_error": 0.0997,
+   "is_vague": 0.3694,
+   "off_agenda": 0.0581,
+   "needs_silent_expert": 0.5799,
+   "is_response_to_request": 0.6476,
+   "polite_refusal": 0.8985,
+   "open_question": 0.1373
+  }
+ ],
+ "s70": [
+  {
+   "has_error": 0.1165,
+   "is_vague": 0.3352,
+   "off_agenda": 0.1944,
+   "needs_silent_expert": 0.5939,
+   "is_response_to_request": 0.396,
+   "polite_refusal": 0.6782,
+   "open_question": 0.3712
+  },
+  {
+   "has_error": 0.078,
+   "is_vague": 0.3796,
+   "off_agenda": 0.0845,
+   "needs_silent_expert": 0.5482,
+   "is_response_to_request": 0.6678,
+   "polite_refusal": 0.8651,
+   "open_question": 0.1869
+  }
+ ]
+}

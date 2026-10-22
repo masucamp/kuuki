@@ -1,0 +1,57 @@
+# Interjection policy thresholds.
+# A move fires when its probe reaches `threshold`, every probe in `requires` reaches its
+# value, no probe in `unless` reaches its value, and (if set) the condition has held for `consecutive` utterances in a row.
+# When several fire, the one listed first wins. Tune with eval/probe_scenario.py and eval/run_eval.py.
+
+moves:
+  - move: correct          # factual error in the latest utterance
+    probe: has_error
+    threshold: 0.3         # eval tune: negatives <= 0.19
+  - move: clarify          # vague reference instead of a concrete instruction
+    probe: is_vague
+    threshold: 0.6         # eval tune: positives 0.51-0.66, negatives up to 0.56. Overlaps; 0.6 favours precision
+  - move: invite_quiet     # someone asked the room, and a silent participant is the right person
+    probe: needs_silent_expert
+    threshold: 0.6
+    requires: {open_question: 0.5}
+    unless: {off_agenda: 0.6}   # a small-talk question is not a cue to involve the expert
+  - move: refocus          # conversation drifted from the agenda for a while
+    probe: off_agenda
+    threshold: 0.6
+    consecutive: 2
+
+# Delivery: how to say it.
+delivery:
+  default:
+    correct: direct
+    clarify: direct
+    invite_quiet: cushioned
+    refocus: cushioned
+  # Correcting a senior speaker (known from the participant list, not asked to Decider)
+  # in front of the room needs high certainty. Below it, send a private message after
+  # the meeting instead (根回し).
+  senior:
+    min_confidence_for_public: 0.85
+    # Whose seniority counts, by how many utterances back the target can be:
+    # an error is in the latest utterance; a vague instruction is often followed by a
+    # hesitant "はい…" from the listener, so the speaker one before also counts.
+    lookback: {correct: 0, clarify: 1}
+
+# Tatemae: a polite "no" that sounds like a "yes".
+# Not an interjection to the room. It triggers an English "air translation" for overseas
+# members and a follow-up item after the meeting.
+tatemae:
+  gate_probe: is_response_to_request
+  gate_threshold: 0.65
+  probe: polite_refusal
+  threshold: 0.7
+
+# Escalation (System 1 -> System 2): when the thresholds say "stay silent" but a probe lands
+# in its gray zone, hand the decision to an LLM instead of trusting the threshold.
+# A confident action from the thresholds is never escalated. Ranges come from the eval tune split,
+# where these probes overlap between positive and negative scenes.
+escalate:
+  has_error: {range: [0.15, 0.3], requires_facts: true}
+  is_vague: {range: [0.45, 0.6]}
+  off_agenda: {range: [0.15, 0.6]}
+  polite_refusal: {range: [0.2, 0.7], requires: {is_response_to_request: 0.65}}

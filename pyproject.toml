@@ -1,0 +1,26 @@
+[project]
+name = "kuuki"
+version = "0.1.0"
+description = "An AI teammate that reads the room: strands-decider decides when and how to speak, Claude on Amazon Bedrock writes the words."
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.43.114",
+    "imageio-ffmpeg>=0.6.0",
+    "pyyaml>=6.0.3",
+    "strands-agents>=1.61.1",
+    "strands-decider>=0.1.0",
+    "torch>=2.14.1",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

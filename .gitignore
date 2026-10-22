@@ -1,0 +1,6 @@
+.venv/
+.env
+models/
+logs/
+__pycache__/
+app/static/audio/live/

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuuki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="wordmark">Kuuki</span>
+      <span class="kanji" lang="ja">空気</span>
+    </div>
+    <div class="meeting-head">
+      <h1 id="meeting-title" lang="ja">Meeting replay</h1>
+      <p id="meeting-agenda" lang="ja"></p>
+    </div>
+    <div class="controls">
+      <div class="clock mono" id="clock" aria-live="polite">--</div>
+      <div class="segmented" role="radiogroup" aria-label="Decision mode">
+        <button role="radio" aria-checked="true" data-mode="hybrid">Hybrid</button>
+        <button role="radio" aria-checked="false" data-mode="decider">Decider only</button>
+      </div>
+      <button class="icon-btn" id="btn-play" title="Play / pause (Space)" aria-label="Play"><i class="ph ph-play"></i></button>
+      <button class="icon-btn" id="btn-step" title="Next utterance (Right arrow)" aria-label="Next utterance"><i class="ph ph-skip-forward"></i></button>
+      <button class="icon-btn" id="btn-restart" title="Restart (R)" aria-label="Restart"><i class="ph ph-arrow-counter-clockwise"></i></button>
+      <button class="icon-btn" id="btn-mute" title="Voices on / off (M)" aria-label="Mute voices"><i class="ph ph-speaker-high"></i></button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="room" aria-label="Meeting">
+      <div class="people" id="people"></div>
+      <div class="facts" id="facts" hidden></div>
+      <div class="transcript" id="transcript">
+        <div class="empty" id="empty">
+          <i class="ph ph-wind"></i>
+          <h2>Ready when you are</h2>
+          <p>Press Play to replay the meeting. Kuuki decides after every utterance whether to say anything at all.</p>
+          <p class="keys mono"><kbd>Space</kbd> play or pause <kbd>&rarr;</kbd> next utterance <kbd>R</kbd> restart</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="panel meter" aria-label="Air meter">
+        <header class="panel-head">
+          <h2>Reading the room</h2>
+          <span class="panel-note mono" id="meter-ms">strands-decider 2B</span>
+        </header>
+        <div id="probes" class="probes"></div>
+        <div class="legend mono">
+          <span><i class="tick-sample"></i>threshold</span>
+          <span><i class="gray-sample"></i>unsure, ask the LLM</span>
+        </div>
+      </section>
+
+      <section class="panel route" aria-label="Decision">
+        <div class="flow mono">
+          <span class="node" id="node-decider">System 1<b id="flow-ms">local GPU</b></span>
+          <i class="ph ph-arrow-right"></i>
+          <span class="node" id="node-policy">Thresholds<b>policy.yaml</b></span>
+          <i class="ph ph-arrow-right"></i>
+          <span class="node" id="node-llm">System 2<b id="flow-llm">Claude Sonnet 5.5</b></span>
+        </div>
+        <p class="verdict" id="verdict" aria-live="polite">Waiting for the first utterance</p>
+        <p class="verdict-sub" id="verdict-sub"></p>
+        <div class="outcomes">
+          <div class="outcome" data-route="silent"><span class="count mono" id="n-silent">0</span><span>Stayed silent</span></div>
+          <div class="outcome" data-route="act"><span class="count mono" id="n-act">0</span><span>Acted</span></div>
+          <div class="outcome" data-route="escalate"><span class="count mono" id="n-escalate">0</span><span>Asked the LLM</span></div>
+        </div>
+      </section>
+
+      <section class="panel after" aria-label="After the meeting">
+        <header class="panel-head">
+          <h2>After the meeting</h2>
+          <span class="panel-note mono">nemawashi</span>
+        </header>
+        <ul id="followups" class="followups">
+          <li class="none">Nothing queued yet.</li>
+        </ul>
+      </section>
+
+      <footer class="stats mono">
+        <div><b id="s-progress">0/0</b><span>utterances</span></div>
+        <div><b id="s-local">-</b><span>decided without an LLM</span></div>
+        <div><b id="s-median">-</b><span>System 1 median</span></div>
+        <div><b id="s-cost">$0.000</b><span>LLM spend</span></div>
+      </footer>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="alert" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

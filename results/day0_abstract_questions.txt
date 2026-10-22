@@ -1,0 +1,106 @@
+
+===== questions: en =====
+
+[factual_error_peer]
+  NG speak_now  P(yes)=0.38   expected=True
+  OK move       correct (p=0.32, conf=0.23)   expected=correct
+  OK delivery   direct (p=0.72, conf=0.58)   expected=direct
+     tatemae    1.02 (conf=0.21)
+
+[factual_error_boss]
+     speak_now  P(yes)=0.49
+  NG move       add_info (p=0.36, conf=0.27)   expected=correct
+  NG delivery   direct (p=0.59, conf=0.39)   expected=private_dm_later
+     tatemae    1.24 (conf=0.29)
+
+[smooth_flow]
+  OK speak_now  P(yes)=0.32   expected=False
+  OK move       stay_silent (p=0.22, conf=0.11)   expected=stay_silent
+     delivery   direct (p=0.71, conf=0.57)
+     tatemae    1.04 (conf=0.26)
+
+[polite_no_client]
+     speak_now  P(yes)=0.32
+     move       invite_quiet (p=0.32, conf=0.22)
+     delivery   cushioned (p=0.47, conf=0.21)
+  NG tatemae    1.16 (conf=0.34)   expected=2
+
+[sincere_yes]
+  OK speak_now  P(yes)=0.30   expected=False
+     move       backchannel (p=0.40, conf=0.31)
+     delivery   direct (p=0.65, conf=0.47)
+  NG tatemae    0.99 (conf=0.24)   expected=0
+
+[off_topic]
+  NG speak_now  P(yes)=0.15   expected=True
+  OK move       refocus (p=0.74, conf=0.71)   expected=refocus
+     delivery   direct (p=0.38, conf=0.07)
+     tatemae    1.08 (conf=0.36)
+
+[quiet_expert]
+  OK speak_now  P(yes)=0.54   expected=True
+  OK move       invite_quiet (p=0.74, conf=0.71)   expected=invite_quiet
+     delivery   direct (p=0.60, conf=0.40)
+     tatemae    1.04 (conf=0.32)
+
+[vague_reference]
+  NG speak_now  P(yes)=0.24   expected=True
+  NG move       stay_silent (p=0.42, conf=0.34)   expected=clarify
+     delivery   direct (p=0.51, conf=0.26)
+     tatemae    1.07 (conf=0.38)
+
+-> 一致 8/16
+-> latency server: median 230ms, p95 236ms / wall: median 232ms (4問バッチ, n=80)
+
+===== questions: ja =====
+
+[factual_error_peer]
+  NG speak_now  P(yes)=0.33   expected=True
+  NG move       add_info (p=0.43, conf=0.34)   expected=correct
+  NG delivery   cushioned (p=0.43, conf=0.15)   expected=direct
+     tatemae    1.10 (conf=0.28)
+
+[factual_error_boss]
+     speak_now  P(yes)=0.39
+  NG move       add_info (p=0.42, conf=0.33)   expected=correct
+  NG delivery   cushioned (p=0.74, conf=0.61)   expected=private_dm_later
+     tatemae    0.90 (conf=0.33)
+
+[smooth_flow]
+  OK speak_now  P(yes)=0.32   expected=False
+  OK move       stay_silent (p=0.43, conf=0.34)   expected=stay_silent
+     delivery   cushioned (p=0.49, conf=0.23)
+     tatemae    0.80 (conf=0.37)
+
+[polite_no_client]
+     speak_now  P(yes)=0.26
+     move       invite_quiet (p=0.29, conf=0.19)
+     delivery   cushioned (p=0.67, conf=0.50)
+  NG tatemae    1.13 (conf=0.35)   expected=2
+
+[sincere_yes]
+  OK speak_now  P(yes)=0.27   expected=False
+     move       stay_silent (p=0.35, conf=0.25)
+     delivery   cushioned (p=0.53, conf=0.30)
+  NG tatemae    0.61 (conf=0.40)   expected=0
+
+[off_topic]
+  NG speak_now  P(yes)=0.17   expected=True
+  OK move       refocus (p=0.85, conf=0.83)   expected=refocus
+     delivery   private_dm_later (p=0.51, conf=0.26)
+     tatemae    1.01 (conf=0.38)
+
+[quiet_expert]
+  NG speak_now  P(yes)=0.48   expected=True
+  OK move       invite_quiet (p=0.53, conf=0.46)   expected=invite_quiet
+     delivery   cushioned (p=0.54, conf=0.30)
+     tatemae    1.11 (conf=0.40)
+
+[vague_reference]
+  NG speak_now  P(yes)=0.25   expected=True
+  NG move       stay_silent (p=0.60, conf=0.54)   expected=clarify
+     delivery   cushioned (p=0.61, conf=0.42)
+     tatemae    0.97 (conf=0.40)
+
+-> 一致 5/16
+-> latency server: median 229ms, p95 241ms / wall: median 230ms (4問バッチ, n=80)

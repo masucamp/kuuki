@@ -1,0 +1,67 @@
+{
+ "0": {
+  "src": "/static/audio/demo_meeting_ja/00.mp3",
+  "ms": 7270,
+  "key": "8305b8436466113f"
+ },
+ "1": {
+  "src": "/static/audio/demo_meeting_ja/01.mp3",
+  "ms": 4660,
+  "key": "69ce34c553dcc328"
+ },
+ "2": {
+  "src": "/static/audio/demo_meeting_ja/02.mp3",
+  "ms": 3720,
+  "key": "e63c6114b772d0ab"
+ },
+ "3": {
+  "src": "/static/audio/demo_meeting_ja/03.mp3",
+  "ms": 4420,
+  "key": "4e1e57041bea6397"
+ },
+ "4": {
+  "src": "/static/audio/demo_meeting_ja/04.mp3",
+  "ms": 9060,
+  "key": "09b15ab5f00a616e"
+ },
+ "5": {
+  "src": "/static/audio/demo_meeting_ja/05.mp3",
+  "ms": 7420,
+  "key": "5edce4e7689ea83b"
+ },
+ "6": {
+  "src": "/static/audio/demo_meeting_ja/06.mp3",
+  "ms": 5020,
+  "key": "e69338c8be008a7e"
+ },
+ "7": {
+  "src": "/static/audio/demo_meeting_ja/07.mp3",
+  "ms": 3670,
+  "key": "fb117a10c886b334"
+ },
+ "8": {
+  "src": "/static/audio/demo_meeting_ja/08.mp3",
+  "ms": 4060,
+  "key": "37ec73ea9783a2e9"
+ },
+ "9": {
+  "src": "/static/audio/demo_meeting_ja/09.mp3",
+  "ms": 6980,
+  "key": "d5286c36d05c0935"
+ },
+ "10": {
+  "src": "/static/audio/demo_meeting_ja/10.mp3",
+  "ms": 6410,
+  "key": "f8fb7183161bbca4"
+ },
+ "11": {
+  "src": "/static/audio/demo_meeting_ja/11.mp3",
+  "ms": 7320,
+  "key": "90cbba2766e16c2c"
+ },
+ "12": {
+  "src": "/static/audio/demo_meeting_ja/12.mp3",
+  "ms": 7010,
+  "key": "b7d3a0b80a86f3ea"
+ }
+}
