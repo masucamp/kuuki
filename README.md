@@ -16,7 +16,7 @@ Kuuki listens to a meeting and decides, after every utterance, **whether** to sp
 
 ![Kuuki replaying a meeting: transcript with English first, the air meter of seven probes, the decision route and the after-meeting notes](docs/screenshot.jpg)
 
-Demo video (under 3 minutes): <!-- TODO: YouTube URL -->
+Demo video (2:57): https://youtu.be/ZgooxmA6Vms
 
 ## What Kuuki does, and what it doesn't
 
