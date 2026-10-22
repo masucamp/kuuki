@@ -16,7 +16,8 @@ Kuuki listens to a meeting and decides, after every utterance, **whether** to sp
 
 ![Kuuki replaying a meeting: transcript with English first, the air meter of seven probes, the decision route and the after-meeting notes](docs/screenshot.jpg)
 
-Demo video (2:57): https://youtu.be/ZgooxmA6Vms
+Demo video (2:57): https://youtu.be/ZgooxmA6Vms  
+Article: [Kuuki: an AI teammate that reads the room](https://builder.aws.com/project/3L29iFgahNRQupTX41Brf7F5kwp/kuuki-an-ai-teammate-that-reads-the-room) (AWS Builder Center)
 
 ## What Kuuki does, and what it doesn't
 
